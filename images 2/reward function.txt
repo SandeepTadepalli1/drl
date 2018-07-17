@@ -1,0 +1,9 @@
+reward = 0.0
+        total_waiting_time = 0.0
+        vehicles = traci.vehicle
+        for veh in vehicles.getIDList():
+            if vehicles.isStopped(veh) or vehicles.getSpeed(veh) <= (vehicles.getAllowedSpeed(veh) * 0.25):  # less than 25% of the allowed speed
+                reward -= ((vehicles.getAllowedSpeed(veh) * 0.25) - vehicles.getSpeed(veh)) * (1 + vehicles.getWaitingTime(veh))
+                total_waiting_time += vehicles.getWaitingTime(veh)
+
+        self.average_waiting_time += 0.0 if len(vehicles.getIDList()) == 0 else total_waiting_time / len(vehicles.getIDList())

@@ -80,8 +80,8 @@ def plot_rewards():
     plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/rew/' + name + str(datetime.datetime.now()).split('.')[0]
                 + '.eps', format='eps', dpi=1000)
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + name + 'REW.txt', 'a') as file:
-        file.write(str(episode_rewards[-1]) + "; ")
+    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + name + 'REW.csv', 'a') as file:
+        file.write(str(episode_rewards[-1]) + ";")
 
     waiting_time_hist.append(env.get_average_waiting_time())
     plt.clf()
@@ -91,8 +91,8 @@ def plot_rewards():
     plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/awt/' + name + str(datetime.datetime.now()).split('.')[
         0] + '.eps', format='eps', dpi=1000)
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + name + 'AWT.txt', 'a') as file:
-        file.write(str(waiting_time_hist[-1]) + "; ")
+    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + name + 'AWT.csv', 'a') as file:
+        file.write(str(waiting_time_hist[-1]) + ";")
 
     env.average_waiting_time = 0
 
@@ -101,16 +101,16 @@ if __name__ == '__main__':
     tf.set_random_seed(0)
 
     with U.make_session(8) as sess:
-        name = "duelingdoubledqnPriori"
+        name = "dqn"
         simulation_time = 3600  # one simulated hour
         num_steps = 1000 * simulation_time
         pre_train = 2500
-        prioritized = True
+        prioritized = False
         prioritized_eps = 1e-4
         batch_size = 32
         buffer_size = 50000
-        learning_freq = 200
-        target_update = 1000
+        learning_freq = 500
+        target_update = 10000
 
         # Create the environment
         env = TrafficEnv(simulation_time, name)
@@ -118,11 +118,11 @@ if __name__ == '__main__':
         # Create all the functions necessary to train the model
         act, train, update_target, debug = deepq.build_train(
             make_obs_ph=lambda name: TrafficTfInput(env.observation.shape, name=name),
-            q_func=dueling_model,
+            q_func=model,
             num_actions=len(env.action_space),
             optimizer=tf.train.AdamOptimizer(learning_rate=1e-4, epsilon=1e-4),
             gamma=0.99,
-            double_q=True
+            double_q=False
         )
 
         # writer = tf.summary.FileWriter("/Users/jeancarlo/PycharmProjects/thesis/logs/", sess.graph)
@@ -178,7 +178,7 @@ if __name__ == '__main__':
 
                 # Update the priorities in the replay buffer
                 if prioritized:
-                    new_priorities = np.abs(td_errors)  # + prioritized_eps
+                    new_priorities = np.abs(td_errors) + prioritized_eps
                     replay_buffer.update_priorities(batch_idxes, new_priorities)
 
             # Update target network periodically.

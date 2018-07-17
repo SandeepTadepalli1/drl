@@ -34,8 +34,11 @@ class TrafficEnv:
     def __init__(self, time_steps, name):
         self.name = name
         self.time_steps = time_steps
+
         self.previous_accumulative_waiting_time = 0.0
         self.register_waiting_time = {}
+        self.elapsed_steps = 0
+        self.average_waiting_time = 0.0
 
         # 2 available actions
         # NUM | Action
@@ -45,8 +48,6 @@ class TrafficEnv:
 
         self.n = int((self.LANE_LENGHT * 2) / self.CELL_SIZE)
         self.observation = np.zeros((3, self.n, self.n))
-        self.elapsed_steps = 0
-        self.average_waiting_time = 0
 
     def get_average_waiting_time(self):
         return self.average_waiting_time / self.elapsed_steps
@@ -159,10 +160,11 @@ class TrafficEnv:
         for veh in vehicles.getIDList():
             if not (veh in self.register_waiting_time):
                 self.register_waiting_time[veh] = vehicles.getAccumulatedWaitingTime(veh)
+                current_total_waiting_time += vehicles.getAccumulatedWaitingTime(veh)
 
             if self.register_waiting_time.get(veh) != vehicles.getAccumulatedWaitingTime(veh):
                 self.register_waiting_time[veh] = vehicles.getAccumulatedWaitingTime(veh)
-                current_total_waiting_time = vehicles.getAccumulatedWaitingTime(veh)
+                current_total_waiting_time += vehicles.getAccumulatedWaitingTime(veh)
 
         reward = self.previous_accumulative_waiting_time - current_total_waiting_time
         self.average_waiting_time += 0.0 if len(vehicles.getIDList()) == 0 else current_total_waiting_time / len(vehicles.getIDList())
@@ -188,8 +190,10 @@ class TrafficEnv:
         traci.start([sumo_binary, "-c", "/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/cross" + self.name + ".sumocfg",
                      "--start", "--quit-on-end", "--waiting-time-memory", "4000"])
 
-        self.elapsed_steps = 0
+        self.previous_accumulative_waiting_time = 0.0
+        self.average_waiting_time = 0.0
         self.register_waiting_time.clear()
+        self.elapsed_steps = 0
 
         self._choose_next_observation()
         return self.observation
@@ -200,7 +204,6 @@ class TrafficEnv:
         if traci.trafficlight.getPhase("0") != self.action_space[action]:
             traci.trafficlight.setPhase("0", traci.trafficlight.getPhase("0") + 1)  # Turn yellow
             for s in range(0, 4):
-                self.elapsed_steps += 1
                 traci.simulationStep()
 
         traci.trafficlight.setPhase("0", self.action_space[action])
