@@ -2,56 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b960423-e4f5-4f7c-8079-fab08247a442" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/force/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/force/dqn_neural_network.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/force/trafficDQNAgent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/force/trafficSignalEnvironment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-07-17 15:36:05.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-07-17 15:36:38.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-07-17 15:37:50.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-07-17 15:39:03.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-07-17 15:35:15.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-07-17 15:35:30.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-07-17 15:36:16.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-07-17 15:37:21.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-07-17 15:38:42.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-07-17 15:36:28.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-07-17 15:37:14.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-07-17 15:38:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/doubledqnATT.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/files/doubledqnAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/doubledqnAWT.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriAWT.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriREW.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/images/files/doubledqnREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/doubledqnREW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/dqnATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnATT.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/files/dqnAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnAWT.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/files/dqnREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnREW.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-07-17 15:36:05.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-07-17 15:36:38.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-07-17 15:37:49.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-07-17 15:39:03.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-07-17 15:35:15.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-07-17 15:35:30.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-07-17 15:36:16.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-07-17 15:37:21.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-07-17 15:38:42.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-07-17 15:36:28.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-07-17 15:37:14.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-07-17 15:38:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/duelingdqnPrioriATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/duelingdqnPrioriATT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/duelingdqnPrioriAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/duelingdqnPrioriAWT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/duelingdqnPrioriREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/duelingdqnPrioriREW.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/data/cross.out" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/cross.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdoubledqn.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdoubledqn.rou.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdoubledqn.sumocfg" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdoubledqn.sumocfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdoubledqnPriori.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdoubledqnPriori.rou.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdoubledqnPriori.sumocfg" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdoubledqnPriori.sumocfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdqn.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdqn.rou.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdqn.sumocfg" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdqn.sumocfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.rou.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.sumocfg" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.sumocfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/data/crossduelingdqnPriori.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossduelingdqnPriori.rou.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossduelingdqnPriori.sumocfg" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossduelingdqnPriori.sumocfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/pruebas.py" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/pruebas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,8 +28,8 @@
       <file leaf-file-name="custom_traffic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+            <state relative-caret-position="391">
+              <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#880#1826#0" />
@@ -79,8 +42,8 @@
       <file leaf-file-name="trafficEnvironment.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2275">
-              <caret line="202" column="108" selection-start-line="202" selection-start-column="108" selection-end-line="202" selection-end-column="108" />
+            <state relative-caret-position="-2222">
+              <caret line="15" column="58" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="58" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
                 <element signature="e#960#1589#0" />
@@ -109,33 +72,6 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base_runner.py" pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/envs/thesis/lib/python3.6/site-packages/tensorforce/execution/base_runner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stats_recorder.py" pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/envs/thesis/lib/python3.6/site-packages/gym/wrappers/monitoring/stats_recorder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-403">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="runner.py" pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/envs/thesis/lib/python3.6/site-packages/tensorforce/execution/runner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="145" column="36" selection-start-line="145" selection-start-column="20" selection-end-line="145" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -219,10 +155,10 @@
         <option value="$PROJECT_DIR$/traci_tls/pruebas.py" />
         <option value="$PROJECT_DIR$/force/dqn_neural_network.json" />
         <option value="$PROJECT_DIR$/force/config.json" />
-        <option value="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" />
         <option value="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" />
         <option value="$PROJECT_DIR$/force/trafficSignalEnvironment.py" />
         <option value="$PROJECT_DIR$/force/trafficDQNAgent.py" />
+        <option value="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" />
       </list>
     </option>
   </component>
@@ -419,6 +355,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25369978" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -841,18 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#880#1826#0" />
-            <element signature="e#3295#5041#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/envs/thesis/lib/python3.6/site-packages/gym/wrappers/monitoring/stats_recorder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-403">
@@ -874,16 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/force/trafficSignalEnvironment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/force/trafficDQNAgent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -894,10 +809,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#880#1826#0" />
+            <element signature="e#3295#5041#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/force/trafficSignalEnvironment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2275">
-          <caret line="202" column="108" selection-start-line="202" selection-start-column="108" selection-end-line="202" selection-end-column="108" />
+        <state relative-caret-position="-2222">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="58" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
             <element signature="e#960#1589#0" />
