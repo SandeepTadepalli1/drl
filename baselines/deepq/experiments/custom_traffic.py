@@ -77,10 +77,10 @@ def plot_rewards():
     plt.plot(np.arange(len(episode_rewards)), episode_rewards)
     plt.ylabel('Reward')
     plt.xlabel('Training Epochs')
-    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/rew/' + name + str(datetime.datetime.now()).split('.')[0]
+    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/rew/' + nameProc + str(datetime.datetime.now()).split('.')[0]
                 + '.eps', format='eps', dpi=1000)
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + name + 'REW.csv', 'a') as file:
+    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'REW.csv', 'a') as file:
         file.write(str(episode_rewards[-1]) + ";")
 
     waiting_time_hist.append(env.get_average_waiting_time())
@@ -88,41 +88,53 @@ def plot_rewards():
     plt.plot(np.arange(len(waiting_time_hist)), waiting_time_hist)
     plt.ylabel('Average Waiting Time')
     plt.xlabel('Training Epochs')
-    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/awt/' + name + str(datetime.datetime.now()).split('.')[
+    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/awt/' + nameProc + str(datetime.datetime.now()).split('.')[
         0] + '.eps', format='eps', dpi=1000)
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + name + 'AWT.csv', 'a') as file:
+    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'AWT.csv', 'a') as file:
         file.write(str(waiting_time_hist[-1]) + ";")
 
-    env.average_waiting_time = 0
+    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'REW.csv', 'a') as file:
+        file.write(str(episode_rewards[-1]) + ";")
+
+    travel_time_hist.append(env.get_average_travel_time())
+    plt.clf()
+    plt.plot(np.arange(len(travel_time_hist)), travel_time_hist)
+    plt.ylabel('Average Travel Time')
+    plt.xlabel('Training Epochs')
+    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/att/' + nameProc + str(datetime.datetime.now()).split('.')[
+        0] + '.eps', format='eps', dpi=1000)
+
+    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'ATT.csv', 'a') as file:
+        file.write(str(travel_time_hist[-1]) + ";")
 
 
 if __name__ == '__main__':
     tf.set_random_seed(0)
 
     with U.make_session(8) as sess:
-        name = "dqn"
+        nameProc = "doubledqn"
         simulation_time = 3600  # one simulated hour
         num_steps = 1000 * simulation_time
         pre_train = 2500
-        prioritized = False
+        prioritized = True
         prioritized_eps = 1e-4
         batch_size = 32
         buffer_size = 50000
         learning_freq = 500
-        target_update = 10000
+        target_update = 5000
 
         # Create the environment
-        env = TrafficEnv(simulation_time, name)
+        env = TrafficEnv(simulation_time, nameProc)
 
         # Create all the functions necessary to train the model
         act, train, update_target, debug = deepq.build_train(
             make_obs_ph=lambda name: TrafficTfInput(env.observation.shape, name=name),
-            q_func=model,
-            num_actions=len(env.action_space),
-            optimizer=tf.train.AdamOptimizer(learning_rate=1e-4, epsilon=1e-4),
+            q_func=dueling_model,
+            num_actions=env.action_space.n,
+            optimizer=tf.train.RMSPropOptimizer(learning_rate=1e-4),
             gamma=0.99,
-            double_q=False
+            double_q=True
         )
 
         # writer = tf.summary.FileWriter("/Users/jeancarlo/PycharmProjects/thesis/logs/", sess.graph)
@@ -145,27 +157,19 @@ if __name__ == '__main__':
 
         episode_rewards = [0.0]
         waiting_time_hist = []
+        travel_time_hist = []
         obs = env.reset()
         for t in range(0, num_steps):
             # Take action and update exploration to the newest value
-            action = act(obs[None], update_eps=exploration.value(t))[0]
+            action = act(np.array(obs)[None], update_eps=exploration.value(t))[0]
             new_obs, rew, done, _ = env.step(action)
             # Store transition in the replay buffer.
             replay_buffer.add(obs, action, rew, new_obs, float(done))
             obs = new_obs
-
             episode_rewards[-1] += rew
-            # print("reward: " + str(rew))
-            # print("episode reward: " + str(episode_rewards[-1]))
-            if done:
-                print("Done Episode" + str(len(episode_rewards)))
-                obs = env.reset()
 
             # Minimize the error in Bellman's equation on a batch sampled from replay buffer.
             if t > pre_train:
-                # obses_t, actions, rewards, obses_tp1, dones = replay_buffer.sample(32)
-                # train(obses_t, actions, rewards, obses_tp1, dones, np.ones_like(rewards))
-
                 if prioritized:
                     experience = replay_buffer.sample(batch_size, beta=beta_schedule.value(t))
                     (obses_t, actions, rewards, obses_tp1, dones, weights, batch_idxes) = experience
@@ -186,12 +190,14 @@ if __name__ == '__main__':
                 update_target()
 
             if done:
+                print("Done Episode " + str(len(episode_rewards)))
                 logger.record_tabular("steps", t)
                 logger.record_tabular("episodes", len(episode_rewards))
-                logger.record_tabular("mean episode reward", episode_rewards[-1])
+                logger.record_tabular("episode reward", episode_rewards[-1])
                 logger.record_tabular("% time spent exploring", int(100 * exploration.value(t)))
                 if prioritized:
                     logger.record_tabular("max priority", replay_buffer._max_priority)
                 logger.dump_tabular()
                 plot_rewards()
-                episode_rewards.append(0)
+                obs = env.reset()
+                episode_rewards.append(0.0)

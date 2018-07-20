@@ -5,6 +5,7 @@ import optparse
 import os
 import random
 import sys
+import gym
 
 import numpy as np
 
@@ -35,22 +36,33 @@ class TrafficEnv:
         self.name = name
         self.time_steps = time_steps
 
-        self.previous_accumulative_waiting_time = 0.0
+        self.previous_total_waiting_time = 0.0
         self.register_waiting_time = {}
         self.elapsed_steps = 0
-        self.average_waiting_time = 0.0
+        self.cumulative_waiting_time = 0.0
+
+        self.register_loaded_time = {}
+        self.register_travel_time = []
 
         # 2 available actions
         # NUM | Action
         #  1  | Turn Green East<->West
         #  0  | Turn Green North<->South
-        self.action_space = [0, 4]
+        self.action_space = gym.spaces.Discrete(2)
+        self.actions = [0, 4]
 
         self.n = int((self.LANE_LENGHT * 2) / self.CELL_SIZE)
-        self.observation = np.zeros((3, self.n, self.n))
+        self.observation = np.zeros((2, self.n, self.n))
 
     def get_average_waiting_time(self):
-        return self.average_waiting_time / self.elapsed_steps
+        return self.cumulative_waiting_time / self.elapsed_steps
+
+    def get_average_travel_time(self):
+        total = 0.0
+        for veh in self.register_travel_time:
+            total += veh
+
+        return total / len(self.register_travel_time)
 
     def generate_route_file(self):
         # demand per second from different directions
@@ -98,8 +110,7 @@ class TrafficEnv:
         return options
 
     def _choose_next_observation(self):
-        traci.simulationStep()
-        self.elapsed_steps += 1
+        self.make_step()
         self.observation.fill(0)
 
         for veh in traci.vehicle.getIDList():
@@ -111,7 +122,7 @@ class TrafficEnv:
             self.observation[1, abs(int((position[1]) / self.CELL_SIZE) - self.n) - 1, int(
                 (position[0]) / self.CELL_SIZE)] += normalized_speed
 
-        self._set_traffic_light_state()
+        # self._set_traffic_light_state()
 
     def _set_traffic_light_state(self):
         GREEN = 1.0
@@ -119,7 +130,7 @@ class TrafficEnv:
 
         # N<->S GREEN
         # W<->E RED
-        if traci.trafficlight.getPhase("0") == self.action_space[0]:
+        if traci.trafficlight.getPhase("0") == self.actions[0]:
             self.observation[2, int(self.n / 2), int(self.n / 2)] = GREEN
             self.observation[2, int(self.n / 2) - 1, int(self.n / 2) - 1] = GREEN
             self.observation[2, int(self.n / 2), int(self.n / 2) - 1] = RED
@@ -127,7 +138,7 @@ class TrafficEnv:
 
         # W<->E GREEN
         # N<->S RED
-        if traci.trafficlight.getPhase("0") == self.action_space[1]:
+        if traci.trafficlight.getPhase("0") == self.actions[1]:
             self.observation[2, int(self.n / 2), int(self.n / 2)] = RED
             self.observation[2, int(self.n / 2) - 1, int(self.n / 2) - 1] = RED
             self.observation[2, int(self.n / 2), int(self.n / 2) - 1] = GREEN
@@ -141,7 +152,7 @@ class TrafficEnv:
 
         reward = 0.0 if len(traci.vehicle.getIDList()) == 0 else -(
                     (total_waiting_time ** 2) / len(traci.vehicle.getIDList()))
-        self.average_waiting_time += 0.0 if len(traci.vehicle.getIDList()) == 0 else total_waiting_time / len(
+        self.cumulative_waiting_time += 0.0 if len(traci.vehicle.getIDList()) == 0 else total_waiting_time / len(
             traci.vehicle.getIDList())
 
         reward = 0.0
@@ -152,11 +163,12 @@ class TrafficEnv:
                 reward -= ((vehicles.getAllowedSpeed(veh) * 0.25) - vehicles.getSpeed(veh)) * (1 + vehicles.getWaitingTime(veh))
                 total_waiting_time += vehicles.getWaitingTime(veh)
 
-        self.average_waiting_time += 0.0 if len(vehicles.getIDList()) == 0 else total_waiting_time / len(vehicles.getIDList())
+        self.cumulative_waiting_time += 0.0 if len(vehicles.getIDList()) == 0 else total_waiting_time / len(vehicles.getIDList())
         """
 
         vehicles = traci.vehicle
         current_total_waiting_time = 0.0
+
         for veh in vehicles.getIDList():
             if not (veh in self.register_waiting_time):
                 self.register_waiting_time[veh] = vehicles.getAccumulatedWaitingTime(veh)
@@ -166,9 +178,9 @@ class TrafficEnv:
                 self.register_waiting_time[veh] = vehicles.getAccumulatedWaitingTime(veh)
                 current_total_waiting_time += vehicles.getAccumulatedWaitingTime(veh)
 
-        reward = self.previous_accumulative_waiting_time - current_total_waiting_time
-        self.average_waiting_time += 0.0 if len(vehicles.getIDList()) == 0 else current_total_waiting_time / len(vehicles.getIDList())
-        self.previous_accumulative_waiting_time = current_total_waiting_time
+        reward = 1.0 if current_total_waiting_time == 0.0 else 1.0 / current_total_waiting_time # self.previous_total_waiting_time - current_total_waiting_time
+        self.cumulative_waiting_time += current_total_waiting_time
+        # self.previous_total_waiting_time = current_total_waiting_time
 
         return reward
 
@@ -188,12 +200,13 @@ class TrafficEnv:
         # this is the normal way of using traci. sumo is started as a
         # subprocess and then the python script connects and runs
         traci.start([sumo_binary, "-c", "/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/cross" + self.name + ".sumocfg",
-                     "--start", "--quit-on-end", "--waiting-time-memory", "4000"])
+                     "--start", "--quit-on-end", "--waiting-time-memory", "10000", "--time-to-teleport", "-1"])
 
-        self.previous_accumulative_waiting_time = 0.0
-        self.average_waiting_time = 0.0
+        self.previous_total_waiting_time = 0.0
+        self.cumulative_waiting_time = 0.0
         self.register_waiting_time.clear()
-        self.elapsed_steps = 0
+        self.register_travel_time.clear()
+        self.register_loaded_time.clear()
 
         self._choose_next_observation()
         return self.observation
@@ -201,20 +214,32 @@ class TrafficEnv:
     def step(self, action):
         done = False
 
-        if traci.trafficlight.getPhase("0") != self.action_space[action]:
+        if traci.trafficlight.getPhase("0") != self.actions[action]:
             traci.trafficlight.setPhase("0", traci.trafficlight.getPhase("0") + 1)  # Turn yellow
             for s in range(0, 4):
-                traci.simulationStep()
+                self.make_step()
 
-        traci.trafficlight.setPhase("0", self.action_space[action])
+        traci.trafficlight.setPhase("0", self.actions[action])
         self._choose_next_observation()
 
-        if traci.simulation.getMinExpectedNumber() > 0 and self.elapsed_steps < 3600:
-            reward = self._get_reward()
-        else:
-            reward = 0.0 if traci.simulation.getMinExpectedNumber() <= 0 else self._get_reward()
+        reward = self._get_reward()
+
+        if traci.simulation.getMinExpectedNumber() <= 0 or (traci.simulation.getCurrentTime() / 1000) > self.time_steps:
+            self.elapsed_steps = (traci.simulation.getCurrentTime() / 1000)
             done = True
             traci.close(False)
             sys.stdout.flush()
 
         return self.observation, reward, done, {}
+
+    def calculate_metrics(self):
+        for veh in traci.simulation.getLoadedIDList():
+            self.register_loaded_time[veh] = traci.simulation.getCurrentTime()
+
+        for veh in traci.simulation.getDepartedIDList():
+            if veh in self.register_loaded_time:
+                self.register_travel_time.append((traci.simulation.getCurrentTime() - self.register_loaded_time.get(veh)) / 1000.0)
+
+    def make_step(self):
+        traci.simulationStep()
+        self.calculate_metrics()
