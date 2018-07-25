@@ -1,8 +1,8 @@
 import numpy as np
 
-r = 32
+episode_rewards = []
 
-for i in range(0,100):
-    r += 1
+for i in range(0, 100):
+    episode_rewards.append(i)
 
-print(r)
+print(";".join(map(str, episode_rewards[-25:])))

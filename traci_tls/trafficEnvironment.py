@@ -32,6 +32,8 @@ class TrafficEnv:
     maxY = 0.0
     minY = 99999999.9
 
+    path = "/Users/jeancarlo/PycharmProjects/thesis/"
+
     def __init__(self, time_steps, name):
         self.name = name
         self.time_steps = time_steps
@@ -71,7 +73,7 @@ class TrafficEnv:
         pNS = 1. / 10
         pSN = 1. / 10
 
-        with open("/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/cross" + self.name + ".rou.xml", "w") as routes:
+        with open(self.path + "traci_tls/data/cross" + self.name + ".rou.xml", "w") as routes:
             print("""<routes>
             <vType id="car" accel="1.0" decel="4.5" sigma="0.7" length="5" minGap="3" maxSpeed="15" guiShape="passenger"/>
 
@@ -199,7 +201,7 @@ class TrafficEnv:
 
         # this is the normal way of using traci. sumo is started as a
         # subprocess and then the python script connects and runs
-        traci.start([sumo_binary, "-c", "/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/cross" + self.name + ".sumocfg",
+        traci.start([sumo_binary, "-c", self.path + "traci_tls/data/cross" + self.name + ".sumocfg",
                      "--start", "--quit-on-end", "--waiting-time-memory", "10000", "--time-to-teleport", "-1"])
 
         self.previous_total_waiting_time = 0.0

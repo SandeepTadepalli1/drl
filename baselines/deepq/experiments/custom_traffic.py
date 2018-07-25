@@ -7,7 +7,7 @@ import baselines.common.tf_util as U
 from baselines import logger
 from baselines import deepq
 from baselines.deepq.replay_buffer import ReplayBuffer, PrioritizedReplayBuffer
-from baselines.common.schedules import LinearSchedule, PiecewiseSchedule
+from baselines.common.schedules import LinearSchedule
 from traci_tls.trafficEnvironment import TrafficEnv
 from baselines.deepq.utils import PlaceholderTfInput
 
@@ -69,7 +69,7 @@ def dueling_model(img_in, num_actions, scope, reuse=False):
         return state_score + action_scores
 
 
-def plot_rewards():
+def plot_rewards(path = "/Users/jeancarlo/PycharmProjects/thesis/"):
     import matplotlib.pyplot as plt
     import datetime
 
@@ -77,52 +77,45 @@ def plot_rewards():
     plt.plot(np.arange(len(episode_rewards)), episode_rewards)
     plt.ylabel('Reward')
     plt.xlabel('Training Epochs')
-    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/rew/' + nameProc + str(datetime.datetime.now()).split('.')[0]
-                + '.eps', format='eps', dpi=1000)
+    plt.savefig(path + 'images/rew/' + nameProc + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps', dpi=1000)
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'REW.csv', 'a') as file:
-        file.write(str(episode_rewards[-1]) + ";")
+    with open(path + 'images/files/' + nameProc + 'REW.csv', 'a') as file:
+        file.write(";".join(map(str, episode_rewards[-save_freq:])))
 
-    waiting_time_hist.append(env.get_average_waiting_time())
     plt.clf()
     plt.plot(np.arange(len(waiting_time_hist)), waiting_time_hist)
     plt.ylabel('Average Waiting Time')
     plt.xlabel('Training Epochs')
-    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/awt/' + nameProc + str(datetime.datetime.now()).split('.')[
-        0] + '.eps', format='eps', dpi=1000)
+    plt.savefig(path + 'images/awt/' + nameProc + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps', dpi=1000)
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'AWT.csv', 'a') as file:
-        file.write(str(waiting_time_hist[-1]) + ";")
+    with open(path + 'images/files/' + nameProc + 'AWT.csv', 'a') as file:
+        file.write(";".join(map(str, waiting_time_hist[-save_freq:])))
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'REW.csv', 'a') as file:
-        file.write(str(episode_rewards[-1]) + ";")
-
-    travel_time_hist.append(env.get_average_travel_time())
     plt.clf()
     plt.plot(np.arange(len(travel_time_hist)), travel_time_hist)
     plt.ylabel('Average Travel Time')
     plt.xlabel('Training Epochs')
-    plt.savefig('/Users/jeancarlo/PycharmProjects/thesis/images/att/' + nameProc + str(datetime.datetime.now()).split('.')[
-        0] + '.eps', format='eps', dpi=1000)
+    plt.savefig(path + 'images/att/' + nameProc + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps', dpi=1000)
 
-    with open('/Users/jeancarlo/PycharmProjects/thesis/images/files/' + nameProc + 'ATT.csv', 'a') as file:
-        file.write(str(travel_time_hist[-1]) + ";")
+    with open(path + 'images/files/' + nameProc + 'ATT.csv', 'a') as file:
+        file.write(";".join(map(str, travel_time_hist[-save_freq:])))
 
 
 if __name__ == '__main__':
     tf.set_random_seed(0)
 
-    with U.make_session(8) as sess:
+    with U.make_session() as sess:
+        save_freq = 25
         nameProc = "doubledqn"
         simulation_time = 3600  # one simulated hour
         num_steps = 1000 * simulation_time
-        pre_train = 2500
-        prioritized = True
+        pre_train = 2000
+        prioritized = False
         prioritized_eps = 1e-4
         batch_size = 32
         buffer_size = 50000
         learning_freq = 500
-        target_update = 5000
+        target_update = 3000
 
         # Create the environment
         env = TrafficEnv(simulation_time, nameProc)
@@ -130,9 +123,9 @@ if __name__ == '__main__':
         # Create all the functions necessary to train the model
         act, train, update_target, debug = deepq.build_train(
             make_obs_ph=lambda name: TrafficTfInput(env.observation.shape, name=name),
-            q_func=dueling_model,
+            q_func=model,
             num_actions=env.action_space.n,
-            optimizer=tf.train.RMSPropOptimizer(learning_rate=1e-4),
+            optimizer=tf.train.AdamOptimizer(learning_rate=1e-4, epsilon=1e-4),
             gamma=0.99,
             double_q=True
         )
@@ -191,13 +184,19 @@ if __name__ == '__main__':
 
             if done:
                 print("Done Episode " + str(len(episode_rewards)))
-                logger.record_tabular("steps", t)
-                logger.record_tabular("episodes", len(episode_rewards))
-                logger.record_tabular("episode reward", episode_rewards[-1])
-                logger.record_tabular("% time spent exploring", int(100 * exploration.value(t)))
-                if prioritized:
-                    logger.record_tabular("max priority", replay_buffer._max_priority)
-                logger.dump_tabular()
-                plot_rewards()
+                waiting_time_hist.append(env.get_average_waiting_time())
+                travel_time_hist.append(env.get_average_travel_time())
+
+                if len(episode_rewards) % save_freq == 0 and t > 0:
+                    print("Done Episode " + str(len(episode_rewards)))
+                    logger.record_tabular("steps", t)
+                    logger.record_tabular("episodes", len(episode_rewards))
+                    logger.record_tabular("episode reward", episode_rewards[-1])
+                    logger.record_tabular("% time spent exploring", int(100 * exploration.value(t)))
+                    if prioritized:
+                        logger.record_tabular("max priority", replay_buffer._max_priority)
+                    logger.dump_tabular()
+                    plot_rewards()
+
                 obs = env.reset()
                 episode_rewards.append(0.0)
