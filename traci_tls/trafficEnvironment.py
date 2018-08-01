@@ -180,9 +180,9 @@ class TrafficEnv:
                 self.register_waiting_time[veh] = vehicles.getAccumulatedWaitingTime(veh)
                 current_total_waiting_time += vehicles.getAccumulatedWaitingTime(veh)
 
-        reward = 1.0 if current_total_waiting_time == 0.0 else 1.0 / current_total_waiting_time # self.previous_total_waiting_time - current_total_waiting_time
+        reward = self.previous_total_waiting_time - current_total_waiting_time  # 1.0 if current_total_waiting_time == 0.0 else 1.0 / current_total_waiting_time
         self.cumulative_waiting_time += current_total_waiting_time
-        # self.previous_total_waiting_time = current_total_waiting_time
+        self.previous_total_waiting_time = current_total_waiting_time
 
         return reward
 

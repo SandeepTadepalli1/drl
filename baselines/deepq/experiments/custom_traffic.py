@@ -106,16 +106,16 @@ if __name__ == '__main__':
 
     with U.make_session() as sess:
         save_freq = 25
-        nameProc = "doubledqn"
+        nameProc = "duelingdoubledqnPriori"
         simulation_time = 3600  # one simulated hour
         num_steps = 1000 * simulation_time
-        pre_train = 2000
-        prioritized = False
+        pre_train = 2500
+        prioritized = True
         prioritized_eps = 1e-4
         batch_size = 32
         buffer_size = 50000
         learning_freq = 500
-        target_update = 3000
+        target_update = 5000
 
         # Create the environment
         env = TrafficEnv(simulation_time, nameProc)
@@ -123,7 +123,7 @@ if __name__ == '__main__':
         # Create all the functions necessary to train the model
         act, train, update_target, debug = deepq.build_train(
             make_obs_ph=lambda name: TrafficTfInput(env.observation.shape, name=name),
-            q_func=model,
+            q_func=dueling_model,
             num_actions=env.action_space.n,
             optimizer=tf.train.AdamOptimizer(learning_rate=1e-4, epsilon=1e-4),
             gamma=0.99,
@@ -157,7 +157,7 @@ if __name__ == '__main__':
             action = act(np.array(obs)[None], update_eps=exploration.value(t))[0]
             new_obs, rew, done, _ = env.step(action)
             # Store transition in the replay buffer.
-            replay_buffer.add(obs, action, rew, new_obs, float(done))
+            replay_buffer.add(obs, action, rew, new_obs, float(False))
             obs = new_obs
             episode_rewards[-1] += rew
 
