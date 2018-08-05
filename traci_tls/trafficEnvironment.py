@@ -243,11 +243,13 @@ class TrafficEnv:
     def is_done(self):
         if traci.simulation.getMinExpectedNumber() <= 0 or (traci.simulation.getCurrentTime() / 1000) > self.time_steps:
             self.elapsed_steps = (traci.simulation.getCurrentTime() / 1000)
-            traci.close(False)
-            sys.stdout.flush()
             return True
 
         return False
+
+    def close(self):
+        traci.close(False)
+        sys.stdout.flush()
 
     def calculate_metrics(self):
         for veh in traci.simulation.getLoadedIDList():

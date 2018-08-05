@@ -88,7 +88,6 @@ class DQNAgent:
         self.learning_freq = 500
         self.target_update = 5000
 
-        self.sess = U.make_session(graph=tf.Graph())
         # Create all the functions necessary to train the model
         self.act, self.train, self.update_target, self.debug = deepq.build_train(
             make_obs_ph=lambda name: TrafficTfInput(observation_shape, name=name),
@@ -96,7 +95,8 @@ class DQNAgent:
             num_actions=len(actions),
             optimizer=tf.train.AdamOptimizer(learning_rate=1e-4, epsilon=1e-4),
             gamma=0.99,
-            double_q=True
+            double_q=True,
+            scope="deepq" + identifier
         )
 
         # Create the replay buffer

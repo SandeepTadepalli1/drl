@@ -5,6 +5,8 @@ from baselines import logger
 from traci_tls.trafficEnvironment import TrafficEnv
 from baselines.deepq.DQNAgent import DQNAgent
 
+import baselines.common.tf_util as U
+
 
 def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
     import matplotlib.pyplot as plt
@@ -48,66 +50,69 @@ def reset():
 if __name__ == '__main__':
     tf.set_random_seed(0)
 
-    save_freq = 25
-    name_process = "doubledqn"
-    simulation_time = 3600  # one simulated hour
-    num_steps = 1000 * simulation_time
+    with U.make_session() as sess:
+        save_freq = 25
+        name_process = "doubledqn"  # Experience Replay Memory enabled
+        simulation_time = 3600  # one simulated hour
+        num_steps = 2000 * simulation_time
 
-    # Create the environment
-    env = TrafficEnv(simulation_time, name_process)
+        # Create the environment
+        env = TrafficEnv(simulation_time, name_process)
 
-    agents = [
-        DQNAgent("0", [0, 4], env.observationDim.shape, x=256.0, y=256.0, num_steps=num_steps),  # right upper
-        DQNAgent("5", [0, 4], env.observationDim.shape, x=0.0, y=256.0, num_steps=num_steps),    # left upper
-        DQNAgent("8", [0, 4], env.observationDim.shape, x=256.0, y=0.0, num_steps=num_steps),    # right lower
-        DQNAgent("12", [0, 4], env.observationDim.shape, x=0.0, y=0.0, num_steps=num_steps)      # left lower
-    ]
+        agents = [
+            DQNAgent("0", [0, 4], env.observationDim.shape, x=256.0, y=256.0, num_steps=num_steps),  # right upper
+            DQNAgent("5", [0, 4], env.observationDim.shape, x=0.0, y=256.0, num_steps=num_steps),    # left upper
+            DQNAgent("8", [0, 4], env.observationDim.shape, x=256.0, y=0.0, num_steps=num_steps),    # right lower
+            DQNAgent("12", [0, 4], env.observationDim.shape, x=0.0, y=0.0, num_steps=num_steps)      # left lower
+        ]
 
-    episode_rewards = [0.0]
-    waiting_time_hist = []
-    travel_time_hist = []
-    reset()
+        episode_rewards = [0.0]
+        waiting_time_hist = []
+        travel_time_hist = []
+        reset()
 
-    for t in range(0, num_steps):
-        for agent in agents:
-            if agent.yellow_steps > 0:
-                # Still in yellow transition
-                agent.yellow_steps -= 1
-                continue
+        for t in range(0, num_steps):
+            for agent in agents:
+                if agent.yellow_steps > 0:
+                    # Still in yellow transition
+                    agent.yellow_steps -= 1
+                    continue
 
-            agent.current_action = agent.take_action(t)
-            should_postpone_action = env.set_phase(agent.current_action, agent.id, agent.actions)
+                agent.current_action = agent.take_action(t)
+                should_postpone_action = env.set_phase(agent.current_action, agent.id, agent.actions)
 
-            if should_postpone_action:
-                # Postpone action until yellow transition finishes
-                agent.yellow_steps = 3
-                agent.postponed_action = agent.current_action
-                continue
+                if should_postpone_action:
+                    # Postpone action until yellow transition finishes
+                    agent.yellow_steps = 3
+                    agent.postponed_action = agent.current_action
+                    continue
 
-        env.make_step()
-        reward = env.get_reward()  # Gets global reward r_{t}
-        episode_rewards[-1] += reward
-        done = env.is_done()
+            env.make_step()
+            reward = env.get_reward()  # Gets global reward r_{t}
+            episode_rewards[-1] += reward
+            done = env.is_done()
 
-        for agent in agents:
-            new_obs = env.choose_next_observation(agent.x, agent.y)
-            agent.store(reward, new_obs, done)
-            agent.obs = new_obs
-            agent.learn(t)
+            for agent in agents:
+                if agent.yellow_steps == 0:
+                    new_obs = env.choose_next_observation(agent.x, agent.y)
+                    agent.store(reward, new_obs, done)  # Comment this line to disable ERM
+                    agent.obs = new_obs
+                agent.learn(t)
 
-        if done:
-            print("Done Episode " + str(len(episode_rewards)))
-            waiting_time_hist.append(env.get_average_waiting_time())
-            travel_time_hist.append(env.get_average_travel_time())
-
-            if len(episode_rewards) % save_freq == 0 and t > 0:
+            if done:
+                env.close()
                 print("Done Episode " + str(len(episode_rewards)))
-                logger.record_tabular("steps", t)
-                logger.record_tabular("episodes", len(episode_rewards))
-                logger.record_tabular("episode reward", episode_rewards[-1])
-                logger.record_tabular("% time spent exploring", int(100 * agents[0].exploration.value(t)))
-                logger.dump_tabular()
-                plot_rewards()
+                waiting_time_hist.append(env.get_average_waiting_time())
+                travel_time_hist.append(env.get_average_travel_time())
 
-            reset()
-            episode_rewards.append(0.0)
+                if len(episode_rewards) % save_freq == 0 and t > 0:
+                    print("Done Episode " + str(len(episode_rewards)))
+                    logger.record_tabular("steps", t)
+                    logger.record_tabular("episodes", len(episode_rewards))
+                    logger.record_tabular("episode reward", episode_rewards[-1])
+                    logger.record_tabular("% time spent exploring", int(100 * agents[0].exploration.value(t)))
+                    logger.dump_tabular()
+                    plot_rewards()
+
+                reset()
+                episode_rewards.append(0.0)
