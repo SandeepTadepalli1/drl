@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Tue Jul 31 00:14:37 2018 by SUMO Version 0.32.0
+<!-- generated on Thu Aug  2 19:19:07 2018 by SUMO gui Version 0.32.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/cross.net.xml"/>
-        <route-files value="/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/crossduelingdoubledqnPriori.rou.xml"/>
-        <additional-files value="/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/cross.det.xml"/>
+        <net-file value="data/cross.net.xml"/>
+        <route-files value="data/cross.rou.xml"/>
+        <additional-files value="data/cross.det.xml"/>
     </input>
+
+    <output>
+        <tripinfo-output value="tripinfo.xml"/>
+    </output>
 
     <time>
         <begin value="0"/>
         <end value="5000"/>
     </time>
-
-    <processing>
-        <time-to-teleport value="-1"/>
-        <waiting-time-memory value="10000"/>
-    </processing>
 
     <report>
         <verbose value="true"/>
@@ -27,13 +26,15 @@
     </report>
 
     <traci_server>
-        <remote-port value="52851"/>
+        <remote-port value="62756"/>
     </traci_server>
 
     <gui_only>
-        <gui-settings-file value="/Users/jeancarlo/PycharmProjects/thesis/traci_tls/data/cross.settings.xml"/>
-        <quit-on-end value="true"/>
-        <start value="true"/>
+        <gui-settings-file value="data/cross.settings.xml"/>
     </gui_only>
 
 </configuration>
+-->
+
+<detector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/det_e1_file.xsd">
+</detector>

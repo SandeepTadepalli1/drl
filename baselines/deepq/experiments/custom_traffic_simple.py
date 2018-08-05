@@ -1,9 +1,7 @@
 import numpy as np
-import tensorflow as tf
 
 from baselines import logger
 from traci_tls.trafficEnvironment import TrafficEnv
-from baselines.deepq.DQNAgent import DQNAgent
 
 
 def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
@@ -41,27 +39,16 @@ def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
 def reset():
     env.reset()
 
-    for a in agents:
-        a.obs = env.choose_next_observation(a.x, a.y)  # Initial observation
-
 
 if __name__ == '__main__':
-    tf.set_random_seed(0)
 
     save_freq = 25
-    name_process = "doubledqn"
+    name_process = "dqn"
     simulation_time = 3600  # one simulated hour
     num_steps = 1000 * simulation_time
 
     # Create the environment
     env = TrafficEnv(simulation_time, name_process)
-
-    agents = [
-        DQNAgent("0", [0, 4], env.observationDim.shape, x=256.0, y=256.0, num_steps=num_steps),  # right upper
-        DQNAgent("5", [0, 4], env.observationDim.shape, x=0.0, y=256.0, num_steps=num_steps),    # left upper
-        DQNAgent("8", [0, 4], env.observationDim.shape, x=256.0, y=0.0, num_steps=num_steps),    # right lower
-        DQNAgent("12", [0, 4], env.observationDim.shape, x=0.0, y=0.0, num_steps=num_steps)      # left lower
-    ]
 
     episode_rewards = [0.0]
     waiting_time_hist = []
@@ -69,31 +56,10 @@ if __name__ == '__main__':
     reset()
 
     for t in range(0, num_steps):
-        for agent in agents:
-            if agent.yellow_steps > 0:
-                # Still in yellow transition
-                agent.yellow_steps -= 1
-                continue
-
-            agent.current_action = agent.take_action(t)
-            should_postpone_action = env.set_phase(agent.current_action, agent.id, agent.actions)
-
-            if should_postpone_action:
-                # Postpone action until yellow transition finishes
-                agent.yellow_steps = 3
-                agent.postponed_action = agent.current_action
-                continue
-
         env.make_step()
-        reward = env.get_reward()  # Gets global reward r_{t}
+        reward = env.get_reward()  # Gets global reward
         episode_rewards[-1] += reward
         done = env.is_done()
-
-        for agent in agents:
-            new_obs = env.choose_next_observation(agent.x, agent.y)
-            agent.store(reward, new_obs, done)
-            agent.obs = new_obs
-            agent.learn(t)
 
         if done:
             print("Done Episode " + str(len(episode_rewards)))
@@ -105,7 +71,6 @@ if __name__ == '__main__':
                 logger.record_tabular("steps", t)
                 logger.record_tabular("episodes", len(episode_rewards))
                 logger.record_tabular("episode reward", episode_rewards[-1])
-                logger.record_tabular("% time spent exploring", int(100 * agents[0].exploration.value(t)))
                 logger.dump_tabular()
                 plot_rewards()
 

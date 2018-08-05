@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
-   <node id="0" x="0.0" y="0.0"  type="traffic_light"/>
+    <!-- right upper tf -->
+    <node id="0" x="0.0" y="0.0"  type="traffic_light"/>
 
-   <node id="1" x="-128.0" y="0.0" type="priority"/>
-   <node id="2" x="+128.0" y="0.0" type="priority"/>
-   <node id="3" x="0.0" y="-128.0" type="priority"/>
-   <node id="4" x="0.0" y="+128.0" type="priority"/>
+    <!-- right upper exit -->
+    <node id="2" x="+128.0" y="0.0" type="priority"/>
+
+    <!-- top right upper exit -->
+    <node id="4" x="0.0" y="+128.0" type="priority"/>
+
+    <!-- left upper tf -->
+    <node id="5" x="-256" y="0.0"  type="traffic_light"/>
+
+    <!-- left upper exit -->
+    <node id="6" x="-384.0" y="0.0" type="priority"/>
+
+    <!-- top left upper exit -->
+    <node id="7" x="-256.0" y="+128.0" type="priority"/>
+
+    <!-- right lower tf -->
+    <node id="8" x="0.0" y="-256.0"  type="traffic_light"/>
+
+    <!-- right lower exit -->
+    <node id="9" x="+128.0" y="-256.0" type="priority"/>
+
+    <!-- bottom right lower exit -->
+    <node id="10" x="0.0" y="-384.0" type="priority"/>
+
+    <!-- bottom right lower exit -->
+    <node id="11" x="0.0" y="+128.0" type="priority"/>
+
+    <!-- left lower tf -->
+    <node id="12" x="-256.0" y="-256.0"  type="traffic_light"/>
+
+    <!-- bottom left lower exit -->
+    <node id="13" x="-384.0" y="-384.0" type="priority"/>
+
+    <!-- left lower exit -->
+    <node id="14" x="-384.0" y="-256.0" type="priority"/>
 </nodes>

@@ -5,7 +5,6 @@ import optparse
 import os
 import random
 import sys
-import gym
 
 import numpy as np
 
@@ -27,18 +26,12 @@ class TrafficEnv:
     LANE_LENGHT = 128
     CELL_SIZE = 4
 
-    maxX = 0.0
-    minX = 99999999.9
-    maxY = 0.0
-    minY = 99999999.9
-
     path = "/Users/jeancarlo/PycharmProjects/thesis/"
 
     def __init__(self, time_steps, name):
         self.name = name
         self.time_steps = time_steps
 
-        self.previous_total_waiting_time = 0.0
         self.register_waiting_time = {}
         self.elapsed_steps = 0
         self.cumulative_waiting_time = 0.0
@@ -46,15 +39,8 @@ class TrafficEnv:
         self.register_loaded_time = {}
         self.register_travel_time = []
 
-        # 2 available actions
-        # NUM | Action
-        #  1  | Turn Green East<->West
-        #  0  | Turn Green North<->South
-        self.action_space = gym.spaces.Discrete(2)
-        self.actions = [0, 4]
-
         self.n = int((self.LANE_LENGHT * 2) / self.CELL_SIZE)
-        self.observation = np.zeros((2, self.n, self.n))
+        self.observationDim = np.zeros((2, self.n, self.n))
 
     def get_average_waiting_time(self):
         return self.cumulative_waiting_time / self.elapsed_steps
@@ -73,34 +59,110 @@ class TrafficEnv:
         pNS = 1. / 10
         pSN = 1. / 10
 
+        pt1 = 1. / 10
+        pt2 = 1. / 10
+        pt3 = 1. / 10
+        pt4 = 1. / 10
+
         with open(self.path + "traci_tls/data/cross" + self.name + ".rou.xml", "w") as routes:
             print("""<routes>
-            <vType id="car" accel="1.0" decel="4.5" sigma="0.7" length="5" minGap="3" maxSpeed="15" guiShape="passenger"/>
+                               <vType id="car" accel="1.0" decel="4.5" sigma="0.7" length="5" minGap="3" maxSpeed="15" guiShape="passenger"/>
 
-            <route id="right" edges="1i 2o" />
-            <route id="left" edges="2i 1o" />
-            <route id="down" edges="4i 3o" />
-            <route id="up" edges="3i 4o" />""", file=routes)
+                               <route id="WETop" edges="5i 1i 2o" />
+                               <route id="EWTop" edges="2i 1o 5o" />
+                               <route id="NS" edges="4i 3o 8i" />
+                               <route id="SN" edges="8o 3i 4o" />
+                               <route id="WEBottom" edges="9o 7o 11o" />
+                               <route id="EWBottom" edges="11i 7i 9i" />
+
+                               <route id="t1" edges="6o 1i 3o 11o" />
+                               <route id="t2" edges="8o 7i 10i" />
+                               <route id="t3" edges="4i 1o 6i" />
+                               <route id="t4" edges="10o 7o 11o" />
+
+                               <route id="t5" edges="9o 7o 8i" />
+                               <route id="t6" edges="9o 10i" />
+                               <route id="t7" edges="6o 5o" />
+                               <route id="t8" edges="4i 3o 11o" />
+                               <route id="t9" edges="9o 7o 3i 1o 6i" />
+                               """, file=routes)
 
             vehNr = 0
-
             for i in range(self.time_steps):
                 if random.uniform(0, 1) < pWE:
-                    print('    <vehicle id="right_%i" type="car" route="right" depart="%i" departSpeed="5"/>' % (
-                        vehNr, i), file=routes)
+                    print(
+                        '    <vehicle id="WETop_%i" type="car" route="WETop" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
                     vehNr += 1
                 if random.uniform(0, 1) < pEW:
-                    print('    <vehicle id="left_%i" type="car" route="left" depart="%i" departSpeed="5"/>' % (
-                        vehNr, i), file=routes)
+                    print(
+                        '    <vehicle id="EWTop_%i" type="car" route="EWTop" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pWE:
+                    print(
+                        '    <vehicle id="WEBottom_%i" type="car" route="WEBottom" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pEW:
+                    print(
+                        '    <vehicle id="EWBottom_%i" type="car" route="EWBottom" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
                     vehNr += 1
                 if random.uniform(0, 1) < pNS:
-                    print('    <vehicle id="down_%i" type="car" route="down" depart="%i" departSpeed="5"/>' % (
+                    print('    <vehicle id="NS_%i" type="car" route="NS" depart="%i" departSpeed="5"/>' % (
                         vehNr, i), file=routes)
                     vehNr += 1
                 if random.uniform(0, 1) < pSN:
-                    print('    <vehicle id="up_%i" type="car" route="up" depart="%i" departSpeed="5"/>' % (
+                    print('    <vehicle id="SN_%i" type="car" route="SN" depart="%i" departSpeed="5"/>' % (
                         vehNr, i), file=routes)
                     vehNr += 1
+
+                if random.uniform(0, 1) < pt1:
+                    print(
+                        '    <vehicle id="t1_%i" type="car" route="t1" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt2:
+                    print(
+                        '    <vehicle id="t2_%i" type="car" route="t2" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt3:
+                    print('    <vehicle id="t3_%i" type="car" route="t3" depart="%i" departSpeed="5"/>' % (
+                        vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt4:
+                    print('    <vehicle id="t4_%i" type="car" route="t4" depart="%i" departSpeed="5"/>' % (
+                        vehNr, i), file=routes)
+                    vehNr += 1
+
+                    print(
+                        '    <vehicle id="t5_%i" type="car" route="t5" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt2:
+                    print(
+                        '    <vehicle id="t6_%i" type="car" route="t6" depart="%i" departSpeed="5"/>' % (
+                            vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt3:
+                    print('    <vehicle id="t6_%i" type="car" route="t6" depart="%i" departSpeed="5"/>' % (
+                        vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt4:
+                    print('    <vehicle id="t7_%i" type="car" route="t7" depart="%i" departSpeed="5"/>' % (
+                        vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt3:
+                    print('    <vehicle id="t8_%i" type="car" route="t8" depart="%i" departSpeed="5"/>' % (
+                        vehNr, i), file=routes)
+                    vehNr += 1
+                if random.uniform(0, 1) < pt4:
+                    print('    <vehicle id="t9_%i" type="car" route="t9" depart="%i" departSpeed="5"/>' % (
+                        vehNr, i), file=routes)
+                    vehNr += 1
+
             print("</routes>", file=routes)
 
     @staticmethod
@@ -111,63 +173,25 @@ class TrafficEnv:
         options, args = optParser.parse_args()
         return options
 
-    def _choose_next_observation(self):
-        self.make_step()
-        self.observation.fill(0)
+    def choose_next_observation(self, x, y):
+        observation = np.zeros((2, self.n, self.n))
 
         for veh in traci.vehicle.getIDList():
             position = traci.vehicle.getPosition(veh)
+            position_zero = position[0] - x
+            position_one = position[1] - y
             normalized_speed = traci.vehicle.getSpeed(veh) / traci.vehicle.getAllowedSpeed(veh)
 
-            self.observation[
-                0, abs(int((position[1]) / self.CELL_SIZE) - self.n) - 1, int((position[0]) / self.CELL_SIZE)] += 1.0
-            self.observation[1, abs(int((position[1]) / self.CELL_SIZE) - self.n) - 1, int(
-                (position[0]) / self.CELL_SIZE)] += normalized_speed
+            try:
+                observation[0, abs(int(position_one / self.CELL_SIZE) - self.n) - 1, int(position_zero / self.CELL_SIZE)] += 1.0  # Position Matrix
+                observation[1, abs(int(position_one / self.CELL_SIZE) - self.n) - 1, int(position_zero / self.CELL_SIZE)] += normalized_speed  # Speed Matrix
+            except IndexError:
+                # vehicle is not in the agent's view
+                continue
 
-        # self._set_traffic_light_state()
+        return observation
 
-    def _set_traffic_light_state(self):
-        GREEN = 1.0
-        RED = 2.0
-
-        # N<->S GREEN
-        # W<->E RED
-        if traci.trafficlight.getPhase("0") == self.actions[0]:
-            self.observation[2, int(self.n / 2), int(self.n / 2)] = GREEN
-            self.observation[2, int(self.n / 2) - 1, int(self.n / 2) - 1] = GREEN
-            self.observation[2, int(self.n / 2), int(self.n / 2) - 1] = RED
-            self.observation[2, int(self.n / 2) - 1, int(self.n / 2)] = RED
-
-        # W<->E GREEN
-        # N<->S RED
-        if traci.trafficlight.getPhase("0") == self.actions[1]:
-            self.observation[2, int(self.n / 2), int(self.n / 2)] = RED
-            self.observation[2, int(self.n / 2) - 1, int(self.n / 2) - 1] = RED
-            self.observation[2, int(self.n / 2), int(self.n / 2) - 1] = GREEN
-            self.observation[2, int(self.n / 2) - 1, int(self.n / 2)] = GREEN
-
-    def _get_reward(self):
-        """
-        total_waiting_time = 0.0
-        for veh in traci.vehicle.getIDList():
-            total_waiting_time += traci.vehicle.getWaitingTime(veh)
-
-        reward = 0.0 if len(traci.vehicle.getIDList()) == 0 else -(
-                    (total_waiting_time ** 2) / len(traci.vehicle.getIDList()))
-        self.cumulative_waiting_time += 0.0 if len(traci.vehicle.getIDList()) == 0 else total_waiting_time / len(
-            traci.vehicle.getIDList())
-
-        reward = 0.0
-        total_waiting_time = 0.0
-        vehicles = traci.vehicle
-        for veh in vehicles.getIDList():
-            if vehicles.isStopped(veh) or vehicles.getSpeed(veh) <= (vehicles.getAllowedSpeed(veh) * 0.25):  # less than 25% of the allowed speed
-                reward -= ((vehicles.getAllowedSpeed(veh) * 0.25) - vehicles.getSpeed(veh)) * (1 + vehicles.getWaitingTime(veh))
-                total_waiting_time += vehicles.getWaitingTime(veh)
-
-        self.cumulative_waiting_time += 0.0 if len(vehicles.getIDList()) == 0 else total_waiting_time / len(vehicles.getIDList())
-        """
-
+    def get_reward(self):
         vehicles = traci.vehicle
         current_total_waiting_time = 0.0
 
@@ -180,17 +204,15 @@ class TrafficEnv:
                 self.register_waiting_time[veh] = vehicles.getAccumulatedWaitingTime(veh)
                 current_total_waiting_time += vehicles.getAccumulatedWaitingTime(veh)
 
-        reward = self.previous_total_waiting_time - current_total_waiting_time  # 1.0 if current_total_waiting_time == 0.0 else 1.0 / current_total_waiting_time
+        reward = 1.0 if current_total_waiting_time == 0.0 else 1.0 / current_total_waiting_time
         self.cumulative_waiting_time += current_total_waiting_time
-        self.previous_total_waiting_time = current_total_waiting_time
 
         return reward
 
     def reset(self):
         options = self._get_options()
 
-        # this script has been called from the command line. It will start sumo as a
-        # server, then connect and run
+        # this script has been called from the command line. It will start sumo as a server, then connect and run
         if options.nogui:
             sumo_binary = checkBinary('sumo')
         else:
@@ -199,40 +221,33 @@ class TrafficEnv:
         # first, generate the route file for this simulation
         self.generate_route_file()
 
-        # this is the normal way of using traci. sumo is started as a
-        # subprocess and then the python script connects and runs
+        # SUMO is started as a subprocess and then the python script connects and runs
         traci.start([sumo_binary, "-c", self.path + "traci_tls/data/cross" + self.name + ".sumocfg",
                      "--start", "--quit-on-end", "--waiting-time-memory", "10000", "--time-to-teleport", "-1"])
 
-        self.previous_total_waiting_time = 0.0
         self.cumulative_waiting_time = 0.0
         self.register_waiting_time.clear()
         self.register_travel_time.clear()
         self.register_loaded_time.clear()
 
-        self._choose_next_observation()
-        return self.observation
+        self.make_step()
 
-    def step(self, action):
-        done = False
+    def set_phase(self, action, traffic_light_id, actions):
+        if traci.trafficlight.getPhase(traffic_light_id) != actions[action]:
+            traci.trafficlight.setPhase(traffic_light_id, traci.trafficlight.getPhase(traffic_light_id) + 1)  # Turn yellow
+            return True
 
-        if traci.trafficlight.getPhase("0") != self.actions[action]:
-            traci.trafficlight.setPhase("0", traci.trafficlight.getPhase("0") + 1)  # Turn yellow
-            for s in range(0, 4):
-                self.make_step()
+        traci.trafficlight.setPhase(traffic_light_id, actions[action])
+        return False
 
-        traci.trafficlight.setPhase("0", self.actions[action])
-        self._choose_next_observation()
-
-        reward = self._get_reward()
-
+    def is_done(self):
         if traci.simulation.getMinExpectedNumber() <= 0 or (traci.simulation.getCurrentTime() / 1000) > self.time_steps:
             self.elapsed_steps = (traci.simulation.getCurrentTime() / 1000)
-            done = True
             traci.close(False)
             sys.stdout.flush()
+            return True
 
-        return self.observation, reward, done, {}
+        return False
 
     def calculate_metrics(self):
         for veh in traci.simulation.getLoadedIDList():
