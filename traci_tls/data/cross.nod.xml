@@ -22,20 +22,11 @@
     <node id="8" x="0.0" y="-256.0"  type="traffic_light"/>
 
     <!-- right lower exit -->
-    <node id="9" x="+128.0" y="-256.0" type="priority"/>
+    <node id="9" x="+128.0" y="-128.0" type="priority"/>
 
     <!-- bottom right lower exit -->
     <node id="10" x="0.0" y="-384.0" type="priority"/>
 
-    <!-- bottom right lower exit -->
-    <node id="11" x="0.0" y="+128.0" type="priority"/>
-
-    <!-- left lower tf -->
-    <node id="12" x="-256.0" y="-256.0"  type="traffic_light"/>
-
     <!-- bottom left lower exit -->
-    <node id="13" x="-384.0" y="-384.0" type="priority"/>
-
-    <!-- left lower exit -->
-    <node id="14" x="-384.0" y="-256.0" type="priority"/>
+    <node id="11" x="-256.0" y="-384.0" type="priority"/>
 </nodes>

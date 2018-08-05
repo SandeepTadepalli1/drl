@@ -44,33 +44,29 @@ def generate_routefile():
     pNS = 1. / 10
     pSN = 1. / 10
 
-    pt1 = 1. / 10
+    pt5 = 1. / 10
+    pt6 = 1. / 10
     pt2 = 1. / 10
     pt3 = 1. / 10
     pt4 = 1. / 10
 
     with open("data/cross.rou.xml", "w") as routes:
         print("""<routes>
-                                      <vType id="car" accel="1.0" decel="4.5" sigma="0.7" length="5" minGap="3" maxSpeed="15" guiShape="passenger"/>
+                                       <vType id="car" accel="1.0" decel="4.5" sigma="0.7" length="5" minGap="3" maxSpeed="15" guiShape="passenger"/>
 
-                                      <route id="WETop" edges="5i 1i 2o" />
-                                      <route id="EWTop" edges="2i 1o 5o" />
-                                      <route id="NS" edges="4i 3o 8i" />
-                                      <route id="SN" edges="8o 3i 4o" />
-                                      <route id="WEBottom" edges="9o 7o 11o" />
-                                      <route id="EWBottom" edges="11i 7i 9i" />
+                                       <route id="WETop" edges="5i 1i 2o" />
+                                       <route id="EWTop" edges="2i 1o 5o" />
+                                       <route id="NS" edges="4i 3o 8i" />
+                                       <route id="SN" edges="8o 3i 4o" />
+                                       <route id="WEBottom" edges="7o 11o" />
+                                       <route id="EWBottom" edges="11i 7i" />
 
-                                      <route id="t1" edges="6o 1i 3o 11o" />
-                                      <route id="t2" edges="8o 7i 10i" />
-                                      <route id="t3" edges="4i 1o 6i" />
-                                      <route id="t4" edges="10o 7o 11o" />
-
-                                      <route id="t5" edges="9o 7o 8i" />
-                                      <route id="t6" edges="9o 10i" />
-                                      <route id="t7" edges="6o 5o" />
-                                      <route id="t8" edges="4i 3o 11o" />
-                                      <route id="t9" edges="9o 7o 3i 1o 6i" />
-                                      """, file=routes)
+                                       <route id="t2" edges="8o 7i" />
+                                       <route id="t3" edges="4i 1o 6i" />
+                                       <route id="t4" edges="7o 3i 2o" />
+                                       <route id="t5" edges="6o 1i 4o" />
+                                       <route id="t6" edges="5i 1i 3o 11o" />
+                                       """, file=routes)
 
         vehNr = 0
         for i in range(3600):
@@ -102,12 +98,6 @@ def generate_routefile():
                 print('    <vehicle id="SN_%i" type="car" route="SN" depart="%i" departSpeed="5"/>' % (
                     vehNr, i), file=routes)
                 vehNr += 1
-
-            if random.uniform(0, 1) < pt1:
-                print(
-                    '    <vehicle id="t1_%i" type="car" route="t1" depart="%i" departSpeed="5"/>' % (
-                        vehNr, i), file=routes)
-                vehNr += 1
             if random.uniform(0, 1) < pt2:
                 print(
                     '    <vehicle id="t2_%i" type="car" route="t2" depart="%i" departSpeed="5"/>' % (
@@ -121,35 +111,18 @@ def generate_routefile():
                 print('    <vehicle id="t4_%i" type="car" route="t4" depart="%i" departSpeed="5"/>' % (
                     vehNr, i), file=routes)
                 vehNr += 1
-
+            if random.uniform(0, 1) < pt5:
                 print(
                     '    <vehicle id="t5_%i" type="car" route="t5" depart="%i" departSpeed="5"/>' % (
                         vehNr, i), file=routes)
                 vehNr += 1
-            if random.uniform(0, 1) < pt2:
+            if random.uniform(0, 1) < pt6:
                 print(
                     '    <vehicle id="t6_%i" type="car" route="t6" depart="%i" departSpeed="5"/>' % (
                         vehNr, i), file=routes)
                 vehNr += 1
-            if random.uniform(0, 1) < pt3:
-                print('    <vehicle id="t6_%i" type="car" route="t6" depart="%i" departSpeed="5"/>' % (
-                    vehNr, i), file=routes)
-                vehNr += 1
-            if random.uniform(0, 1) < pt4:
-                print('    <vehicle id="t7_%i" type="car" route="t7" depart="%i" departSpeed="5"/>' % (
-                    vehNr, i), file=routes)
-                vehNr += 1
-            if random.uniform(0, 1) < pt3:
-                print('    <vehicle id="t8_%i" type="car" route="t8" depart="%i" departSpeed="5"/>' % (
-                    vehNr, i), file=routes)
-                vehNr += 1
-            if random.uniform(0, 1) < pt4:
-                print('    <vehicle id="t9_%i" type="car" route="t9" depart="%i" departSpeed="5"/>' % (
-                    vehNr, i), file=routes)
-                vehNr += 1
 
         print("</routes>", file=routes)
-
 
 def run():
     """execute the TraCI control loop"""
@@ -191,9 +164,8 @@ def run():
         #         continue
 
         step += 1
-        traci.trafficlight.setPhase("12", 6)
 
-    traci.close()
+    traci.close(False)
     sys.stdout.flush()
 
 

@@ -1,8 +1,4 @@
-import numpy as np
+import os
+import multiprocessing
 
-episode_rewards = []
-
-for i in range(0, 100):
-    episode_rewards.append(i)
-
-print(";".join(map(str, episode_rewards[-25:])))
+print(int(os.getenv('RCALL_NUM_CPU', multiprocessing.cpu_count())))

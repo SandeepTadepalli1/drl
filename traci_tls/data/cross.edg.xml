@@ -25,20 +25,12 @@
     <edge id="6o" from="7" to="5" priority="50" numLanes="2" speed="15" />
 
     <!-- connection tfs in the bottom -->
-    <edge id="7i" from="8" to="12" priority="50" numLanes="2" speed="15" />
-    <edge id="7o" from="12" to="8" priority="50" numLanes="2" speed="15" />
+    <edge id="7i" from="8" to="11" priority="50" numLanes="2" speed="15" />
+    <edge id="7o" from="11" to="8" priority="50" numLanes="2" speed="15" />
 
     <!-- exit from lower right tf to the bottom -->
     <edge id="8i" from="8" to="10" priority="50" numLanes="2" speed="15" />
     <edge id="8o" from="10" to="8" priority="50" numLanes="2" speed="15" />
-
-    <!-- exit from bottom left tf to the left -->
-    <edge id="9i" from="12" to="13" priority="50" numLanes="2" speed="15" />
-    <edge id="9o" from="13" to="12" priority="50" numLanes="2" speed="15" />
-
-    <!-- exit from bottom left tf to the bottom -->
-    <edge id="10i" from="12" to="14" priority="50" numLanes="2" speed="15" />
-    <edge id="10o" from="14" to="12" priority="50" numLanes="2" speed="15" />
 
     <!-- exit from bottom right tf to the right -->
     <edge id="11i" from="9" to="8" priority="50" numLanes="2" speed="15" />

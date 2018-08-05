@@ -73,14 +73,14 @@ class TrafficEnv:
                                <route id="EWTop" edges="2i 1o 5o" />
                                <route id="NS" edges="4i 3o 8i" />
                                <route id="SN" edges="8o 3i 4o" />
-                               <route id="WEBottom" edges="9o 7o 11o" />
-                               <route id="EWBottom" edges="11i 7i 9i" />
+                               <route id="WEBottom" edges="7o 11o" />
+                               <route id="EWBottom" edges="11i 7i" />
 
-                               <route id="t2" edges="8o 7i 10i" />
+                               <route id="t2" edges="8o 7i" />
                                <route id="t3" edges="4i 1o 6i" />
-                               <route id="t4" edges="10o 7o 11o" />
-                               <route id="t5" edges="9o 7o 8i" />
-                               <route id="t6" edges="4i 3o 11o" />
+                               <route id="t4" edges="7o 3i 2o" />
+                               <route id="t5" edges="6o 1i 4o" />
+                               <route id="t6" edges="5i 1i 3o 11o" />
                                """, file=routes)
 
             vehNr = 0

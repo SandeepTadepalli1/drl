@@ -54,7 +54,7 @@ if __name__ == '__main__':
         save_freq = 25
         name_process = "doubledqn"  # Experience Replay Memory enabled
         simulation_time = 3600  # one simulated hour
-        num_steps = 2000 * simulation_time
+        num_steps = 1000 * simulation_time
 
         # Create the environment
         env = TrafficEnv(simulation_time, name_process)
@@ -63,7 +63,7 @@ if __name__ == '__main__':
             DQNAgent("0", [0, 4], env.observationDim.shape, x=256.0, y=256.0, num_steps=num_steps),  # right upper
             DQNAgent("5", [0, 4], env.observationDim.shape, x=0.0, y=256.0, num_steps=num_steps),    # left upper
             DQNAgent("8", [0, 4], env.observationDim.shape, x=256.0, y=0.0, num_steps=num_steps),    # right lower
-            DQNAgent("12", [0, 4], env.observationDim.shape, x=0.0, y=0.0, num_steps=num_steps)      # left lower
+            # DQNAgent("12", [0, 4], env.observationDim.shape, x=0.0, y=0.0, num_steps=num_steps)      # left lower
         ]
 
         episode_rewards = [0.0]
