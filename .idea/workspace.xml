@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b960423-e4f5-4f7c-8079-fab08247a442" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/DQNAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/deepq/DQNAgent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/dqnATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnATT.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/dqnAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnAWT.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/dqnREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnREW.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdoubledqn.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdoubledqn.rou.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdqn.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdqn.rou.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" afterDir="false" />
     </list>
@@ -107,12 +100,11 @@
       <file leaf-file-name="trafficEnvironment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="57" column="21" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="21" />
+            <state relative-caret-position="641">
+              <caret line="91" column="25" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="25" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
                 <element signature="e#1744#1881#0" />
-                <element signature="e#3493#8003#0" />
                 <element signature="e#3652#3905#0" />
               </folding>
             </state>
@@ -215,8 +207,8 @@
         <option value="$PROJECT_DIR$/traci_tls/runner.py" />
         <option value="$PROJECT_DIR$/baselines/common/tf_util.py" />
         <option value="$PROJECT_DIR$/baselines/deepq/DQNAgent.py" />
-        <option value="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" />
         <option value="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" />
+        <option value="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" />
       </list>
     </option>
   </component>
@@ -412,7 +404,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20295984" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -841,17 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic_simple.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#282#1620#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/envs/thesis/lib/python3.6/site-packages/tensorflow/python/client/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -886,19 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="57" column="21" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#1744#1881#0" />
-            <element signature="e#3493#8003#0" />
-            <element signature="e#3652#3905#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/baselines/deepq/DQNAgent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -908,6 +875,29 @@
             <element signature="e#209#542#0" />
             <element signature="e#662#1608#0" />
             <element signature="e#1674#3049#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#1744#1881#0" />
+            <element signature="e#3652#3905#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic_simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#282#1620#0" />
           </folding>
         </state>
       </provider>
