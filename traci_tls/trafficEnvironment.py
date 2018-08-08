@@ -40,7 +40,7 @@ class TrafficEnv:
         self.register_travel_time = []
 
         self.n = int((self.LANE_LENGHT * 2) / self.CELL_SIZE)
-        self.observationDim = np.zeros((2, self.n, self.n))
+        self.observationDim = np.zeros((3, self.n, self.n))
 
     def get_average_waiting_time(self):
         return self.cumulative_waiting_time / self.elapsed_steps
@@ -143,12 +143,12 @@ class TrafficEnv:
     def _get_options():
         optParser = optparse.OptionParser()
         optParser.add_option("--nogui", action="store_true",
-                             default=True, help="run the commandline version of sumo")
+                             default=False, help="run the commandline version of sumo")
         options, args = optParser.parse_args()
         return options
 
     def choose_next_observation(self, x, y):
-        observation = np.zeros((2, self.n, self.n))
+        observation = np.zeros((3, self.n, self.n), dtype=float)
 
         for veh in traci.vehicle.getIDList():
             position = traci.vehicle.getPosition(veh)
@@ -156,12 +156,14 @@ class TrafficEnv:
             position_one = position[1] - y
             normalized_speed = traci.vehicle.getSpeed(veh) / traci.vehicle.getAllowedSpeed(veh)
 
-            try:
-                observation[0, abs(int(position_one / self.CELL_SIZE) - self.n) - 1, int(position_zero / self.CELL_SIZE)] += 1.0  # Position Matrix
-                observation[1, abs(int(position_one / self.CELL_SIZE) - self.n) - 1, int(position_zero / self.CELL_SIZE)] += normalized_speed  # Speed Matrix
-            except IndexError:
-                # vehicle is not in the agent's view
+            # Check boundaries to avoid IndexError
+            if abs(int(position_one / self.CELL_SIZE) - self.n) - 1 < 0 or \
+                    abs(int(position_one / self.CELL_SIZE) - self.n) - 1 >= self.n or \
+                    int(position_zero / self.CELL_SIZE) < 0 or int(position_zero / self.CELL_SIZE) >= self.n:
                 continue
+
+            observation[0, abs(int(position_one / self.CELL_SIZE) - self.n) - 1, int(position_zero / self.CELL_SIZE)] += 1.0  # Position Matrix
+            observation[1, abs(int(position_one / self.CELL_SIZE) - self.n) - 1, int(position_zero / self.CELL_SIZE)] += normalized_speed  # Speed Matrix
 
         return observation
 

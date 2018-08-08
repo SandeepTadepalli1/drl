@@ -62,6 +62,7 @@ if __name__ == '__main__':
         done = env.is_done()
 
         if done:
+            env.close()
             print("Done Episode " + str(len(episode_rewards)))
             waiting_time_hist.append(env.get_average_waiting_time())
             travel_time_hist.append(env.get_average_travel_time())

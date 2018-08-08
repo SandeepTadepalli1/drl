@@ -79,12 +79,14 @@ class DQNAgent:
         self.postponed_action = None
         self.obs = None
         self.current_action = None
+        self.weights = np.ones(32)
+        self.td_errors = np.ones(32)
 
         self.pre_train = 2500
         self.prioritized = True
         self.prioritized_eps = 1e-4
         self.batch_size = 32
-        self.buffer_size = 50000
+        self.buffer_size = 20000
         self.learning_freq = 500
         self.target_update = 5000
 
@@ -134,19 +136,35 @@ class DQNAgent:
         if t > self.pre_train:
             if self.prioritized:
                 experience = self.replay_buffer.sample(self.batch_size, beta=self.beta_schedule.value(t))
-                (obses_t, actions, rewards, obses_tp1, dones, weights, batch_idxes) = experience
+                (obses_t, actions, rewards, obses_tp1, dones, self.weights, batch_idxes) = experience
             else:
                 obses_t, actions, rewards, obses_tp1, dones = self.replay_buffer.sample(self.batch_size)
-                weights = np.ones_like(rewards)
+                self.weights = np.ones_like(rewards)
 
             # Minimize the error in Bellman's equation and compute TD-error
-            td_errors = self.train(obses_t, actions, rewards, obses_tp1, dones, weights)
+            self.td_errors = self.train(obses_t, actions, rewards, obses_tp1, dones, self.weights)
 
             # Update the priorities in the replay buffer
             if self.prioritized:
-                new_priorities = np.abs(td_errors) + self.prioritized_eps
+                new_priorities = np.abs(self.td_errors) + self.prioritized_eps
                 self.replay_buffer.update_priorities(batch_idxes, new_priorities)
 
         # Update target network periodically.
         if t % self.target_update == 0:
             self.update_target()
+
+    def add_fingerprint_to_obs(self, obs, weights, identifier, td_errors):
+        idx = 0
+
+        for w in weights:
+            obs[2, identifier, idx] = w
+            idx += 1
+
+        for td in td_errors:
+            obs[2, identifier, idx] = td
+            idx += 1
+
+        return obs
+
+    def add_fingerprint(self, weights, identifier, td_errors):
+        self.obs = self.add_fingerprint_to_obs(self.obs, weights, identifier, td_errors)

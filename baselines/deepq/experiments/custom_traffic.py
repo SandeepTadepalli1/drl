@@ -44,7 +44,12 @@ def reset():
     env.reset()
 
     for a in agents:
-        a.obs = env.choose_next_observation(a.x, a.y)  # Initial observation
+        a.obs = env.choose_next_observation(a.x, a.y)
+        index = 0
+        for na in agents:
+            if na.id != a.id:
+                a.add_fingerprint(na.weights, index, na.td_errors)
+                index += 1
 
 
 if __name__ == '__main__':
@@ -52,7 +57,7 @@ if __name__ == '__main__':
 
     with U.make_session() as sess:
         save_freq = 25
-        name_process = "doubledqn"  # Experience Replay Memory enabled
+        name_process = "duelingdoubledqnPriori"  # Experience Replay Memory enabled
         simulation_time = 3600  # one simulated hour
         num_steps = 1000 * simulation_time
 
@@ -65,6 +70,10 @@ if __name__ == '__main__':
             DQNAgent("8", [0, 4], env.observationDim.shape, x=256.0, y=0.0, num_steps=num_steps),    # right lower
             # DQNAgent("12", [0, 4], env.observationDim.shape, x=0.0, y=0.0, num_steps=num_steps)      # left lower
         ]
+
+        # writer = tf.summary.FileWriter("/Users/jeancarlo/PycharmProjects/thesis/logs/", sess.graph)
+        # writer.close()
+        saver = tf.train.Saver()
 
         episode_rewards = [0.0]
         waiting_time_hist = []
@@ -95,9 +104,19 @@ if __name__ == '__main__':
             for agent in agents:
                 if agent.yellow_steps == 0:
                     new_obs = env.choose_next_observation(agent.x, agent.y)
-                    agent.store(reward, new_obs, done)  # Comment this line to disable ERM
+
+                    idx = 0
+                    for n in agents:
+                        if n.id != agent.id:
+                            new_obs = agent.add_fingerprint_to_obs(new_obs, n.weights, idx, n.td_errors)
+                            idx += 1
+
+                    agent.store(reward, new_obs, done)
                     agent.obs = new_obs
-                agent.learn(t)
+                    agent.learn(t)
+
+            import gc
+            gc.collect()
 
             if done:
                 env.close()
@@ -116,3 +135,7 @@ if __name__ == '__main__':
 
                 reset()
                 episode_rewards.append(0.0)
+
+        # Save the variables to disk.
+        save_path = saver.save(sess, "/tmp/model.ckpt")
+        print("Model saved in path: %s" % save_path)
