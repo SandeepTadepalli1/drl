@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
     <!-- connection tfs in the top -->
-    <edge id="1i" from="5" to="0" priority="50" numLanes="2" speed="15" />
-    <edge id="1o" from="0" to="5" priority="50" numLanes="2" speed="15" />
+    <edge id="1i" from="5" to="0" priority="50" numLanes="2" speed="30" />
+    <edge id="1o" from="0" to="5" priority="50" numLanes="2" speed="30" />
 
     <!-- exit from upper right tf to the right -->
-    <edge id="2i" from="2" to="0" priority="50" numLanes="2" speed="15" />
-    <edge id="2o" from="0" to="2" priority="50" numLanes="2" speed="15" />
+    <edge id="2i" from="2" to="0" priority="50" numLanes="2" speed="30" />
+    <edge id="2o" from="0" to="2" priority="50" numLanes="2" speed="30" />
 
     <!-- connection tfs in the right -->
-    <edge id="3i" from="8" to="0" priority="50" numLanes="2" speed="15" />
-    <edge id="3o" from="0" to="8" priority="50" numLanes="2" speed="15" />
+    <edge id="3i" from="8" to="0" priority="50" numLanes="2" speed="30" />
+    <edge id="3o" from="0" to="8" priority="50" numLanes="2" speed="30" />
 
     <!-- exit from upper right tf to the top -->
-    <edge id="4i" from="4" to="0" priority="50" numLanes="2" speed="15" />
-    <edge id="4o" from="0" to="4" priority="50" numLanes="2" speed="15" />
+    <edge id="4i" from="4" to="0" priority="50" numLanes="2" speed="30" />
+    <edge id="4o" from="0" to="4" priority="50" numLanes="2" speed="30" />
 
     <!-- exit from upper left tf to the left -->
-    <edge id="5i" from="6" to="5" priority="50" numLanes="2" speed="15" />
-    <edge id="5o" from="5" to="6" priority="50" numLanes="2" speed="15" />
+    <edge id="5i" from="6" to="5" priority="50" numLanes="2" speed="30" />
+    <edge id="5o" from="5" to="6" priority="50" numLanes="2" speed="30" />
 
     <!-- exit from upper left tf to the top -->
-    <edge id="6i" from="5" to="7" priority="50" numLanes="2" speed="15" />
-    <edge id="6o" from="7" to="5" priority="50" numLanes="2" speed="15" />
+    <edge id="6i" from="5" to="7" priority="50" numLanes="2" speed="30" />
+    <edge id="6o" from="7" to="5" priority="50" numLanes="2" speed="30" />
 
     <!-- connection tfs in the bottom -->
-    <edge id="7i" from="8" to="11" priority="50" numLanes="2" speed="15" />
-    <edge id="7o" from="11" to="8" priority="50" numLanes="2" speed="15" />
+    <edge id="7i" from="8" to="11" priority="50" numLanes="2" speed="30" />
+    <edge id="7o" from="11" to="8" priority="50" numLanes="2" speed="30" />
 
     <!-- exit from lower right tf to the bottom -->
-    <edge id="8i" from="8" to="10" priority="50" numLanes="2" speed="15" />
-    <edge id="8o" from="10" to="8" priority="50" numLanes="2" speed="15" />
+    <edge id="8i" from="8" to="10" priority="50" numLanes="2" speed="30" />
+    <edge id="8o" from="10" to="8" priority="50" numLanes="2" speed="30" />
 
     <!-- exit from bottom right tf to the right -->
-    <edge id="11i" from="9" to="8" priority="50" numLanes="2" speed="15" />
-    <edge id="11o" from="8" to="9" priority="50" numLanes="2" speed="15" />
+    <edge id="11i" from="9" to="8" priority="50" numLanes="2" speed="30" />
+    <edge id="11o" from="8" to="9" priority="50" numLanes="2" speed="30" />
 </edges>

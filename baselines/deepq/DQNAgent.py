@@ -86,7 +86,7 @@ class DQNAgent:
         self.prioritized = True
         self.prioritized_eps = 1e-4
         self.batch_size = 32
-        self.buffer_size = 20000
+        self.buffer_size = 30000
         self.learning_freq = 500
         self.target_update = 5000
 

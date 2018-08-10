@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+import gc
 
 from baselines import logger
 from traci_tls.trafficEnvironment import TrafficEnv
@@ -16,7 +17,8 @@ def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
     plt.plot(np.arange(len(episode_rewards)), episode_rewards)
     plt.ylabel('Reward')
     plt.xlabel('Training Epochs')
-    plt.savefig(path + 'images/rew/' + name_process + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps', dpi=1000)
+    plt.savefig(path + 'images/rew/' + name_process + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps',
+                dpi=1000)
 
     with open(path + 'images/files/' + name_process + 'REW.csv', 'a') as file:
         file.write(";".join(map(str, episode_rewards[-save_freq:])))
@@ -25,7 +27,8 @@ def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
     plt.plot(np.arange(len(waiting_time_hist)), waiting_time_hist)
     plt.ylabel('Average Waiting Time')
     plt.xlabel('Training Epochs')
-    plt.savefig(path + 'images/awt/' + name_process + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps', dpi=1000)
+    plt.savefig(path + 'images/awt/' + name_process + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps',
+                dpi=1000)
 
     with open(path + 'images/files/' + name_process + 'AWT.csv', 'a') as file:
         file.write(";".join(map(str, waiting_time_hist[-save_freq:])))
@@ -34,7 +37,8 @@ def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
     plt.plot(np.arange(len(travel_time_hist)), travel_time_hist)
     plt.ylabel('Average Travel Time')
     plt.xlabel('Training Epochs')
-    plt.savefig(path + 'images/att/' + name_process + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps', dpi=1000)
+    plt.savefig(path + 'images/att/' + name_process + str(datetime.datetime.now()).split('.')[0] + '.eps', format='eps',
+                dpi=1000)
 
     with open(path + 'images/files/' + name_process + 'ATT.csv', 'a') as file:
         file.write(";".join(map(str, travel_time_hist[-save_freq:])))
@@ -43,8 +47,14 @@ def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
 def reset():
     env.reset()
 
+    # with Pool(len(agents)) as pool_obs:
+    #    result_obs = pool_obs.map(env.choose_next_observation, [(a.x, a.y) for a in agents])
+
+    indexObs = 0
     for a in agents:
-        a.obs = env.choose_next_observation(a.x, a.y)
+        a.obs = env.choose_next_observation(a.x, a.y)  # result_obs[indexObs]
+        indexObs += 1
+
         index = 0
         for na in agents:
             if na.id != a.id:
@@ -57,7 +67,7 @@ if __name__ == '__main__':
 
     with U.make_session() as sess:
         save_freq = 25
-        name_process = "duelingdoubledqnPriori"  # Experience Replay Memory enabled
+        name_process = "doubledqn"  # Experience Replay Memory enabled
         simulation_time = 3600  # one simulated hour
         num_steps = 1000 * simulation_time
 
@@ -65,15 +75,15 @@ if __name__ == '__main__':
         env = TrafficEnv(simulation_time, name_process)
 
         agents = [
-            DQNAgent("0", [0, 4], env.observationDim.shape, x=256.0, y=256.0, num_steps=num_steps),  # right upper
-            DQNAgent("5", [0, 4], env.observationDim.shape, x=0.0, y=256.0, num_steps=num_steps),    # left upper
-            DQNAgent("8", [0, 4], env.observationDim.shape, x=256.0, y=0.0, num_steps=num_steps),    # right lower
+            DQNAgent("0", [0, 4], env.shape, x=256.0, y=256.0, num_steps=num_steps),  # right upper
+            DQNAgent("5", [0, 4], env.shape, x=0.0, y=256.0, num_steps=num_steps),  # left upper
+            DQNAgent("8", [0, 4], env.shape, x=256.0, y=0.0, num_steps=num_steps),  # right lower
             # DQNAgent("12", [0, 4], env.observationDim.shape, x=0.0, y=0.0, num_steps=num_steps)      # left lower
         ]
 
         # writer = tf.summary.FileWriter("/Users/jeancarlo/PycharmProjects/thesis/logs/", sess.graph)
         # writer.close()
-        saver = tf.train.Saver()
+        # saver = tf.train.Saver()
 
         episode_rewards = [0.0]
         waiting_time_hist = []
@@ -101,9 +111,14 @@ if __name__ == '__main__':
             episode_rewards[-1] += reward
             done = env.is_done()
 
+            # with Pool(len(agents)) as pool_new_obs:
+            #    result_new_obs = pool_new_obs.map(env.choose_next_observation, [(a.x, a.y) for a in agents if a.yellow_steps == 0])
+
+            index_new_obs = 0
             for agent in agents:
                 if agent.yellow_steps == 0:
-                    new_obs = env.choose_next_observation(agent.x, agent.y)
+                    new_obs = env.choose_next_observation(agent.x, agent.y)  # result_new_obs[index_new_obs]
+                    index_new_obs += 1
 
                     idx = 0
                     for n in agents:
@@ -115,7 +130,6 @@ if __name__ == '__main__':
                     agent.obs = new_obs
                     agent.learn(t)
 
-            import gc
             gc.collect()
 
             if done:
@@ -137,5 +151,5 @@ if __name__ == '__main__':
                 episode_rewards.append(0.0)
 
         # Save the variables to disk.
-        save_path = saver.save(sess, "/tmp/model.ckpt")
-        print("Model saved in path: %s" % save_path)
+        # save_path = saver.save(sess, "/tmp/model.ckpt")
+        # print("Model saved in path: %s" % save_path)
