@@ -102,11 +102,11 @@ class DQNAgent:
         )
 
         # Create the replay buffer
-        if self.prioritized:
-            self.replay_buffer = PrioritizedReplayBuffer(size=self.buffer_size, alpha=0.6)
-            self.beta_schedule = LinearSchedule(num_steps // 4, initial_p=0.4, final_p=1.0)
-        else:
-            self.replay_buffer = ReplayBuffer(self.buffer_size)
+        #if self.prioritized:
+        #    self.replay_buffer = PrioritizedReplayBuffer(size=self.buffer_size, alpha=0.6)
+        #    self.beta_schedule = LinearSchedule(num_steps // 4, initial_p=0.4, final_p=1.0)
+        #else:
+        #    self.replay_buffer = ReplayBuffer(self.buffer_size)
 
         # Create the schedule for exploration starting from 1 (every action is random) down to
         # 0.02 (98% of actions are selected according to values predicted by the model).
@@ -149,6 +149,9 @@ class DQNAgent:
                 new_priorities = np.abs(self.td_errors) + self.prioritized_eps
                 self.replay_buffer.update_priorities(batch_idxes, new_priorities)
 
+        self.update_target(t)
+
+    def update_target(self, t):
         # Update target network periodically.
         if t % self.target_update == 0:
             self.update_target()

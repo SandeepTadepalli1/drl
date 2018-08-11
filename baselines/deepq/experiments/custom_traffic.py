@@ -114,21 +114,22 @@ if __name__ == '__main__':
             # with Pool(len(agents)) as pool_new_obs:
             #    result_new_obs = pool_new_obs.map(env.choose_next_observation, [(a.x, a.y) for a in agents if a.yellow_steps == 0])
 
-            index_new_obs = 0
+            #index_new_obs = 0
             for agent in agents:
                 if agent.yellow_steps == 0:
                     new_obs = env.choose_next_observation(agent.x, agent.y)  # result_new_obs[index_new_obs]
-                    index_new_obs += 1
+                    #index_new_obs += 1
 
-                    idx = 0
-                    for n in agents:
-                        if n.id != agent.id:
-                            new_obs = agent.add_fingerprint_to_obs(new_obs, n.weights, idx, n.td_errors)
-                            idx += 1
+                    #idx = 0
+                    #for n in agents:
+                    #    if n.id != agent.id:
+                    #        new_obs = agent.add_fingerprint_to_obs(new_obs, n.weights, idx, n.td_errors)
+                    #        idx += 1
 
-                    agent.store(reward, new_obs, done)
+                    # agent.store(reward, new_obs, done)
                     agent.obs = new_obs
-                    agent.learn(t)
+                    #agent.learn(t)
+                    agent.update_target(t)
 
             gc.collect()
 
