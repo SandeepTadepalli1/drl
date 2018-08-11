@@ -38,7 +38,7 @@ class TrafficEnv:
 
         self.register_loaded_time = {}
         self.register_travel_time = []
-        self.shape = (3, 64, 64)
+        self.shape = (2, 64, 64)
 
         self.n = int((self.LANE_LENGHT * 2) / self.CELL_SIZE)
 
@@ -147,7 +147,7 @@ class TrafficEnv:
         return options
 
     def choose_next_observation(self, x, y):
-        observation = np.zeros((3, self.n, self.n), dtype=float)
+        observation = np.zeros((2, self.n, self.n), dtype=float)
 
         vehicles_list = traci.vehicle.getIDList()
         for veh in vehicles_list:
