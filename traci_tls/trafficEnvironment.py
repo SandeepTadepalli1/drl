@@ -54,15 +54,15 @@ class TrafficEnv:
 
     def generate_route_file(self):
         # demand per second from different directions
-        pWE = 1. / 20
-        pEW = 1. / 20
-        pNS = 1. / 20
-        pSN = 1. / 20
-        pt2 = 1. / 20
-        pt3 = 1. / 20
-        pt4 = 1. / 20
-        pt5 = 1. / 20
-        pt6 = 1. / 20
+        pWE = 1. / 10
+        pEW = 1. / 10
+        pNS = 1. / 10
+        pSN = 1. / 10
+        pt2 = 1. / 10
+        pt3 = 1. / 10
+        pt4 = 1. / 10
+        pt5 = 1. / 10
+        pt6 = 1. / 10
 
         with open(self.path + "traci_tls/data/cross" + self.name + ".rou.xml", "w") as routes:
             print("""<routes>

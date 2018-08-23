@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 
 
@@ -99,6 +100,9 @@ def read4(file, floor):
         hist = np.asarray(n)
         return hist[0:1000]
 
+font = {'size': 13}
+matplotlib.rc('font', **font)
+
 """
 Techniques
 """
@@ -108,7 +112,7 @@ plt.plot(np.arange(len(dqn)), dqn, linewidth=.7, label="DQN")
 plt.ylabel('Average Waiting Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('DQN Techniques AWT.png', format='png')
+plt.savefig('DQN-Techniques-AWT.png', format='png')
 plt.clf()
 
 ddqn = read4("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/doubledqnAWT", 500)
@@ -116,7 +120,7 @@ plt.plot(np.arange(len(ddqn)), ddqn, linewidth=.7, label="DDQN")
 plt.ylabel('Average Waiting Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('DDQN Techniques AWT.png', format='png')
+plt.savefig('DDQN-Techniques-AWT.png', format='png')
 plt.clf()
 
 ddqnPrior = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/doubledqnPrioriAWT")
@@ -124,16 +128,16 @@ plt.plot(np.arange(len(ddqnPrior)), ddqnPrior, linewidth=.7, label="Prioritized 
 plt.ylabel('Average Waiting Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('Priori DDQN Techniques AWT.png', format='png')
+plt.savefig('Priori-DDQN-Techniques-AWT.png', format='png')
 plt.clf()
 
 
 ddqnPrior = read4("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/duelingdoubledqnPrioriATT_Adam_goodOneAWT", 400)
-plt.plot(np.arange(len(ddqnPrior)), ddqnPrior, linewidth=.7, label="Prioritized Dueling DDQN")
+plt.plot(np.arange(len(ddqnPrior)), ddqnPrior, linewidth=.7, label="Dueling Prioritized DDQN")
 plt.ylabel('Average Waiting Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('Dueling Priori DDQN Techniques AWT.png', format='png')
+plt.savefig('Dueling-Priori-DDQN-Techniques-AWT.png', format='png')
 plt.clf()
 
 dqn = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/dqnREW")
@@ -141,7 +145,7 @@ plt.plot(np.arange(len(dqn)), dqn, linewidth=.7, label="DQN")
 plt.ylabel('Rewards')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('DQN Techniques Rewards.png', format='png')
+plt.savefig('DQN-Techniques-Rewards.png', format='png')
 plt.clf()
 
 ddqn = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/doubledqnREW")
@@ -149,7 +153,7 @@ plt.plot(np.arange(len(ddqn)), ddqn, linewidth=.7, label="DDQN")
 plt.ylabel('Rewards')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('DDQN Techniques Rewards.png', format='png')
+plt.savefig('DDQN-Techniques-Rewards.png', format='png')
 plt.clf()
 
 ddqnPrior = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/doubledqnPrioriREW")
@@ -157,7 +161,7 @@ plt.plot(np.arange(len(ddqnPrior)), ddqnPrior, linewidth=.7, label="Prioritized 
 plt.ylabel('Rewards')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('Priori DDQN Techniques Rewards.png', format='png')
+plt.savefig('Priori-DDQN-Techniques-Rewards.png', format='png')
 plt.clf()
 
 ddqnPrior = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/duelingdoubledqnPrioriATT_Adam_goodOneREW")
@@ -165,7 +169,7 @@ plt.plot(np.arange(len(ddqnPrior)), ddqnPrior, linewidth=.7, label="Dueling Prio
 plt.ylabel('Rewards')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('Dueling Priori DDQN Techniques Rewards.png', format='png')
+plt.savefig('Dueling-Priori-DDQN-Techniques-Rewards.png', format='png')
 plt.clf()
 
 dqn = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/dqnATT")
@@ -173,7 +177,8 @@ plt.plot(np.arange(len(dqn)), dqn, linewidth=.7, label="DQN")
 plt.ylabel('Average Travel Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('DQN Techniques ATT.png', format='png')
+plt.tight_layout()
+plt.savefig('DQN-Techniques-ATT.png', format='png')
 plt.clf()
 
 ddqn = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/doubledqnATT")
@@ -181,7 +186,7 @@ plt.plot(np.arange(len(ddqn)), ddqn, linewidth=.7, label="DDQN")
 plt.ylabel('Average Travel Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('DDQN Techniques ATT.png', format='png')
+plt.savefig('DDQN-Techniques-ATT.png', format='png')
 plt.clf()
 
 ddqnPrior = read("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/doubledqnPrioriATT")
@@ -189,7 +194,7 @@ plt.plot(np.arange(len(ddqnPrior)), ddqnPrior, linewidth=.7, label="Prioritized 
 plt.ylabel('Average Travel Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('Priori DDQN Techniques ATT.png', format='png')
+plt.savefig('Priori-DDQN-Techniques-ATT.png', format='png')
 plt.clf()
 
 ddqnPrior = read4("/Users/jeancarlo/PycharmProjects/thesis/images/techniques/duelingdoubledqnPrioriATT_Adam_goodOneATT", 120)
@@ -197,7 +202,7 @@ plt.plot(np.arange(len(ddqnPrior)), ddqnPrior, linewidth=.7, label="Dueling Prio
 plt.ylabel('Average Travel Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
-plt.savefig('Dueling Priori DDQN Techniques ATT.png', format='png')
+plt.savefig('Dueling-Priori-DDQN-Techniques-ATT.png', format='png')
 plt.clf()
 
 """
@@ -252,6 +257,7 @@ plt.plot(np.arange(len(good)), good, linewidth=.7, label="1 / W_t")
 plt.ylabel('Average Travel Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
+plt.tight_layout()
 plt.savefig('Rewards-ATT.png', format='png')
 
 plt.clf()
@@ -264,4 +270,5 @@ plt.plot(np.arange(len(good)), good, linewidth=.7, label="1 / W_t")
 plt.ylabel('Average Waiting Time (ms)')
 plt.xlabel('Episodes')
 plt.legend(loc='upper left')
+plt.tight_layout()
 plt.savefig('Rewards-AWT.png', format='png')

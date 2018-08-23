@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
     with U.make_session() as sess:
         save_freq = 25
-        name_process = "doubledqn"  # Experience Replay Memory enabled
+        name_process = "duelingdoubledqnPriori"  # Experience Replay Memory enabled
         simulation_time = 3600  # one simulated hour
         num_steps = 1000 * simulation_time
 
@@ -115,9 +115,10 @@ if __name__ == '__main__':
                     #        new_obs = agent.add_fingerprint_to_obs(new_obs, n.weights, idx, n.td_errors)
                     #        idx += 1
 
-                    agent.store(reward, new_obs, done)
+                    #agent.store(reward, new_obs, done)
                     agent.obs = new_obs
-                    agent.learn(t)
+                    #agent.learn(t)
+                    agent.update_target_network(t)
 
             gc.collect()
 

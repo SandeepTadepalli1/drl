@@ -2,9 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b960423-e4f5-4f7c-8079-fab08247a442" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDQN Techniques ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDQN Techniques AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDQN Techniques Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DQN Techniques ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DQN Techniques AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DQN Techniques Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dueling Priori DDQN Techniques ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dueling Priori DDQN Techniques AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dueling Priori DDQN Techniques Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/High-Load-ATT.png" beforeDir="false" afterPath="$PROJECT_DIR$/High-Load-ATT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/High-Load-AWT.png" beforeDir="false" afterPath="$PROJECT_DIR$/High-Load-AWT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/High-Load-REW.png" beforeDir="false" afterPath="$PROJECT_DIR$/High-Load-REW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Low-Load-ATT.png" beforeDir="false" afterPath="$PROJECT_DIR$/Low-Load-ATT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Low-Load-AWT.png" beforeDir="false" afterPath="$PROJECT_DIR$/Low-Load-AWT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Low-Load-REW.png" beforeDir="false" afterPath="$PROJECT_DIR$/Low-Load-REW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Priori DDQN Techniques ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Priori DDQN Techniques AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Priori DDQN Techniques Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS-vs-Adam-ATT.png" beforeDir="false" afterPath="$PROJECT_DIR$/RMS-vs-Adam-ATT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS-vs-Adam-AWT.png" beforeDir="false" afterPath="$PROJECT_DIR$/RMS-vs-Adam-AWT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS-vs-Adam-REW.png" beforeDir="false" afterPath="$PROJECT_DIR$/RMS-vs-Adam-REW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rewards-ATT.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rewards-ATT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rewards-AWT.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rewards-AWT.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baselines/deepq/DQNAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/deepq/DQNAgent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs_evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FingerprintATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/evaluation/low/FingerprintATT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FingerprintAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/evaluation/low/FingerprintAWT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FingerprintREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/evaluation/low/FingerprintREW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/doubledqnPrioriATT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/doubledqnPrioriAWT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/doubledqnPrioriREW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/dqnATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnATT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/dqnAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnAWT.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/dqnREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/dqnREW.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdoubledqnPriori.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdoubledqnPriori.rou.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossdqn.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossdqn.rou.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.rou.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="custom_traffic.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom_traffic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="119" column="34" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
+            <state relative-caret-position="91">
+              <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -31,8 +68,8 @@
       <file leaf-file-name="DQNAgent.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/baselines/deepq/DQNAgent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="151" column="37" selection-start-line="151" selection-start-column="37" selection-end-line="151" selection-end-column="37" />
+            <state relative-caret-position="266">
+              <caret line="88" column="24" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#781#1727#0" />
@@ -42,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graphs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphs.py">
+      <file leaf-file-name="graphs_evaluation.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graphs_evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-end-line="266" selection-end-column="44" />
+            <state relative-caret-position="134">
+              <caret line="245" column="38" selection-start-line="245" selection-start-column="38" selection-end-line="245" selection-end-column="38" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -54,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graphs_evaluation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphs_evaluation.py">
+      <file leaf-file-name="graphs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="117" column="28" lean-forward="true" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="28" />
+            <state relative-caret-position="512">
+              <caret line="271" column="28" selection-start-line="271" selection-start-column="28" selection-end-line="272" selection-end-column="18" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -69,14 +106,10 @@
       <file leaf-file-name="trafficEnvironment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="149" column="33" selection-start-line="149" selection-start-column="33" selection-end-line="149" selection-end-column="33" />
+            <state relative-caret-position="1929">
+              <caret line="186" column="66" selection-start-line="186" selection-start-column="40" selection-end-line="186" selection-end-column="66" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#1639#1695#0" />
-                <element signature="e#1744#1881#0" />
-                <element signature="e#1923#8056#0" />
-                <element signature="e#2165#8056#0" />
               </folding>
             </state>
           </provider>
@@ -93,9 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>output_graph</find>
-      <find>plot_cost</find>
-      <find>loss</find>
       <find>learn_step_counter</find>
       <find>q_eval</find>
       <find>target_replace_op</find>
@@ -123,6 +153,9 @@
       <find>30</find>
       <find>20</find>
       <find>15</find>
+      <find>ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), fancybox=True, shadow=True, ncol=5)</find>
+      <find>Dueling</find>
+      <find>bbox_to_anchor=(0.5, -0.05)</find>
     </findStrings>
     <replaceStrings>
       <replace>50</replace>
@@ -133,7 +166,9 @@
       <replace>25</replace>
       <replace>20</replace>
       <replace>15</replace>
+      <replace>ax.legend(loc='upper center', bbox_to_anchor=(0.48, -0.13), fancybox=True, shadow=True, ncol=5)</replace>
       <replace>30</replace>
+      <replace>bbox_to_anchor=(0.48, -0.13)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -159,7 +194,6 @@
         <option value="$PROJECT_DIR$/force/config.json" />
         <option value="$PROJECT_DIR$/force/trafficSignalEnvironment.py" />
         <option value="$PROJECT_DIR$/force/trafficDQNAgent.py" />
-        <option value="$PROJECT_DIR$/graphs.py" />
         <option value="$PROJECT_DIR$/traci_tls/data/cross.sumocfg" />
         <option value="$PROJECT_DIR$/traci_tls/data/crossdqn.sumocfg" />
         <option value="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.sumocfg" />
@@ -171,10 +205,11 @@
         <option value="$PROJECT_DIR$/traci_tls/data/crossdoubledqnPriori.sumocfg" />
         <option value="$PROJECT_DIR$/traci_tls/data/cross.edg.xml" />
         <option value="$PROJECT_DIR$/traci_tls/pruebas.py" />
-        <option value="$PROJECT_DIR$/graphs_evaluation.py" />
-        <option value="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" />
         <option value="$PROJECT_DIR$/baselines/deepq/DQNAgent.py" />
+        <option value="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" />
         <option value="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" />
+        <option value="$PROJECT_DIR$/graphs.py" />
+        <option value="$PROJECT_DIR$/graphs_evaluation.py" />
       </list>
     </option>
   </component>
@@ -195,6 +230,29 @@
             <path>
               <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
               <item name="thesis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="baselines" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="baselines" type="462c0819:PsiDirectoryNode" />
+              <item name="deepq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="baselines" type="462c0819:PsiDirectoryNode" />
+              <item name="deepq" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="traci_tls" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,7 +336,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="graphs_evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="graphs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="thesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/graphs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="graphs_evaluation" type="PythonConfigurationType" factoryName="Python">
       <module name="thesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -333,18 +409,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
+      <item itemvalue="Python.graphs_evaluation" />
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.pruebas" />
-      <item itemvalue="Python.custom_traffic" />
       <item itemvalue="Python.custom_traffic_simple" />
       <item itemvalue="Python.trafficEnvironment" />
-      <item itemvalue="Python.graphs_evaluation" />
+      <item itemvalue="Python.pruebas" />
+      <item itemvalue="Python.custom_traffic" />
+      <item itemvalue="Python.graphs" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.graphs_evaluation" />
-        <item itemvalue="Python.custom_traffic_simple" />
+        <item itemvalue="Python.graphs" />
         <item itemvalue="Python.custom_traffic" />
+        <item itemvalue="Python.custom_traffic_simple" />
         <item itemvalue="Python.trafficEnvironment" />
         <item itemvalue="Python.pruebas" />
       </list>
@@ -801,16 +878,6 @@
     <entry file="file://$PROJECT_DIR$/traci_tls/data/crossduelingdqnPriori.sumocfg">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-end-line="266" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/-2116069868/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -818,34 +885,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphs_evaluation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="117" column="28" lean-forward="true" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="149" column="33" selection-start-line="149" selection-start-column="33" selection-end-line="149" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#1639#1695#0" />
-            <element signature="e#1744#1881#0" />
-            <element signature="e#1923#8056#0" />
-            <element signature="e#2165#8056#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/baselines/deepq/DQNAgent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="151" column="37" selection-start-line="151" selection-start-column="37" selection-end-line="151" selection-end-column="37" />
+        <state relative-caret-position="266">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="24" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#781#1727#0" />
@@ -854,12 +897,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/traci_tls/trafficEnvironment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1929">
+          <caret line="186" column="66" selection-start-line="186" selection-start-column="40" selection-end-line="186" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="119" column="34" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
+        <state relative-caret-position="91">
+          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="271" column="28" selection-start-line="271" selection-start-column="28" selection-end-line="272" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="245" column="38" selection-start-line="245" selection-start-column="38" selection-end-line="245" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

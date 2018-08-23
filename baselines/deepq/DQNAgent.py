@@ -83,7 +83,7 @@ class DQNAgent:
         self.td_errors = np.ones(32)
 
         self.pre_train = 2500
-        self.prioritized = True
+        self.prioritized = False
         self.prioritized_eps = 1e-4
         self.batch_size = 32
         self.buffer_size = 30000
