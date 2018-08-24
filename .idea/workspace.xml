@@ -3,17 +3,792 @@
   <component name="ChangeListManager">
     <list default="true" id="1b960423-e4f5-4f7c-8079-fab08247a442" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/High-Load-ATT.png" beforeDir="false" afterPath="$PROJECT_DIR$/High-Load-ATT.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/High-Load-AWT.png" beforeDir="false" afterPath="$PROJECT_DIR$/High-Load-AWT.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/High-Load-REW.png" beforeDir="false" afterPath="$PROJECT_DIR$/High-Load-REW.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs_evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/evaluation/high/NonERMATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/evaluation/high/NonERMATT.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/evaluation/high/NonERMAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/evaluation/high/NonERMAWT.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/evaluation/high/NonERMREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/evaluation/high/NonERMREW.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriATT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriATT.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriAWT.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriAWT.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriREW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriREW.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.rou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.rou.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDQN-Techniques-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDQN-Techniques-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDQN-Techniques-Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DDQN–Techniques-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DQN-Techniques-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DQN-Techniques-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DQN-Techniques-Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dueling-Priori-DDQN-Techniques-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dueling-Priori-DDQN-Techniques-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dueling-Priori-DDQN-Techniques-Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERM-Low-Load-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERM-Low-Load-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERM-Low-Load-REW.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/High-Load-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/High-Load-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/High-Load-REW.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Low-Load-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Low-Load-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Low-Load-REW.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Priori-DDQN-Techniques-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Priori-DDQN-Techniques-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Priori-DDQN-Techniques-Rewards.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS-vs-Adam-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS-vs-Adam-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS-vs-Adam-REW.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rewards-ATT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rewards-AWT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/dqn_neural_network.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/logs/events.out.tfevents.1531970476.MacBook-Pro-de-JEAN.local" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/logs/events.out.tfevents.1531970644.MacBook-Pro-de-JEAN.local" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/logs/events.out.tfevents.1531970910.MacBook-Pro-de-JEAN.local" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/logs/events.out.tfevents.1531971015.MacBook-Pro-de-JEAN.local" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/trafficDQNAgent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/force/trafficSignalEnvironment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs_evaluation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Archive.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-06 05:14:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-06 09:39:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-06 14:03:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-06 21:03:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-07 02:18:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-07 07:25:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-07 12:24:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-07 17:35:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-07 23:02:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-08 04:36:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-08 09:24:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-08 14:16:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqn2018-08-08 19:31:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 02:19:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 05:07:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 07:55:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 10:44:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 13:34:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 16:29:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 19:20:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-09 22:14:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 01:06:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 03:57:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 06:34:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 09:12:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 12:01:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 14:52:44.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 18:02:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-10 21:03:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 00:04:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 03:07:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 06:03:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 08:56:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 11:50:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 14:45:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 17:52:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-11 20:47:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 01:08:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 04:52:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 07:56:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 10:51:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 13:45:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 16:43:42.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 19:40:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-12 22:36:17.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 01:32:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 04:28:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 07:25:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 10:20:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 13:17:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 16:14:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 19:09:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-13 22:51:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-14 01:55:07.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-14 04:58:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-14 07:52:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-14 10:48:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/doubledqnPriori2018-08-14 13:44:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 01:03:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 02:09:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 03:18:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 04:22:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 05:30:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 06:31:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 07:30:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 08:30:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 09:29:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 10:26:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 11:27:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 12:26:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 13:25:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 14:24:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 15:30:30.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-05 16:38:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 00:12:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 01:01:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 02:43:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 03:44:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 04:45:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 05:45:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 06:36:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 07:26:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 08:14:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 09:02:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 09:50:56.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 10:39:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 11:27:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 12:16:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 13:04:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 13:53:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 14:45:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 17:21:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 18:23:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 19:27:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 20:28:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 21:25:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 22:21:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-06 23:14:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 00:08:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 01:03:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 01:58:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 02:51:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 03:42:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 04:41:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 05:29:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 06:19:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 07:07:42.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 07:56:40.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 08:46:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 09:35:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 10:25:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 11:14:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 12:03:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-07 12:53:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 02:40:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 02:50:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 03:00:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 03:10:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 03:19:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 03:30:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 03:40:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 03:49:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 03:59:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 04:10:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 04:20:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 04:29:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 04:38:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 04:47:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 04:56:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 05:05:46.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 05:14:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 05:23:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 05:32:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 05:41:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 05:50:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 05:59:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 06:08:19.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 06:17:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 06:26:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 06:35:19.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 06:44:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 06:53:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 07:02:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 07:11:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 07:20:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 07:29:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 07:38:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 07:47:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 07:56:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 08:05:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 08:13:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 08:22:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 08:31:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-10 08:41:01.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-14 16:05:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-14 18:22:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-14 20:36:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-14 22:53:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 01:09:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 03:31:47.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 05:44:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 07:56:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 10:09:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 12:19:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 14:33:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 16:53:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 19:16:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 21:31:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-15 23:46:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 02:02:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 04:21:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 06:31:17.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 08:41:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 10:51:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 13:01:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 15:16:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 17:38:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 19:54:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-16 22:12:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 00:23:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 02:42:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 04:54:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 07:05:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 09:16:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 11:27:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 13:39:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 16:22:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 18:35:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 20:48:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-17 23:10:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-18 01:30:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-18 03:49:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-18 06:02:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/dqn2018-08-18 08:14:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-18 17:54:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-18 21:24:01.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-19 01:25:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-19 05:27:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-19 09:49:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-19 14:11:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-19 18:45:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-19 23:21:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-20 03:52:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-20 08:15:47.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-20 12:39:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-20 17:05:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-20 21:41:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-21 02:14:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-21 06:48:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-21 11:13:40.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-21 15:39:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-21 20:14:07.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-22 00:45:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-22 05:13:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-22 09:37:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-22 14:04:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-22 18:50:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-22 23:29:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-23 04:06:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-23 08:31:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-23 13:02:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-23 17:38:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-23 22:13:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-24 02:48:01.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-24 07:14:53.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/att/duelingdoubledqnPriori2018-08-24 11:44:36.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-06 05:14:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-06 09:39:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-06 14:03:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-06 21:03:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-07 02:18:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-07 07:25:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-07 12:24:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-07 17:35:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-07 23:02:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-08 04:36:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-08 09:24:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-08 14:16:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqn2018-08-08 19:31:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 02:19:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 05:07:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 07:55:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 10:44:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 13:34:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 16:29:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 19:20:36.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-09 22:14:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 01:06:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 03:57:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 06:34:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 09:12:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 12:01:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 14:52:44.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 18:02:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-10 21:03:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 00:04:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 03:07:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 06:03:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 08:56:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 11:50:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 14:45:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 17:52:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-11 20:47:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 01:08:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 04:52:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 07:56:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 10:51:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 13:45:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 16:43:42.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 19:40:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-12 22:36:17.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 01:32:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 04:28:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 07:25:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 10:20:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 13:17:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 16:14:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 19:09:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-13 22:51:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-14 01:55:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-14 04:58:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-14 07:52:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-14 10:48:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/doubledqnPriori2018-08-14 13:44:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 01:03:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 02:09:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 03:18:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 04:22:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 05:30:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 06:31:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 07:30:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 08:30:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 09:29:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 10:26:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 11:27:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 12:26:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 13:25:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 14:24:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 15:30:30.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-05 16:38:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 00:12:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 01:01:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 02:43:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 03:44:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 04:45:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 05:45:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 06:36:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 07:26:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 08:14:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 09:02:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 09:50:56.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 10:39:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 11:27:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 12:16:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 13:04:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 13:53:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 14:45:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 17:21:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 18:23:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 19:27:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 20:28:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 21:25:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 22:21:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-06 23:14:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 00:08:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 01:03:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 01:58:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 02:51:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 03:42:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 04:41:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 05:29:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 06:19:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 07:07:42.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 07:56:40.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 08:46:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 09:35:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 10:25:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 11:14:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 12:03:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-07 12:53:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 02:40:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 02:50:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 03:00:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 03:10:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 03:19:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 03:30:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 03:40:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 03:49:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 03:59:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 04:10:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 04:20:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 04:29:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 04:38:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 04:47:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 04:56:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 05:05:46.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 05:14:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 05:23:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 05:32:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 05:41:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 05:50:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 05:59:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 06:08:19.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 06:17:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 06:26:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 06:35:19.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 06:44:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 06:53:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 07:02:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 07:11:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 07:20:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 07:29:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 07:38:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 07:47:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 07:56:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 08:05:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 08:13:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 08:22:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 08:31:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-10 08:41:01.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-14 16:05:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-14 18:22:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-14 20:36:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-14 22:53:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 01:09:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 03:31:47.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 05:44:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 07:56:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 10:09:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 12:19:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 14:33:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 16:53:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 19:16:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 21:31:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-15 23:46:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 02:02:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 04:21:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 06:31:17.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 08:41:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 10:51:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 13:01:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 15:16:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 17:38:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 19:54:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-16 22:12:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 00:23:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 02:42:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 04:54:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 07:05:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 09:16:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 11:27:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 13:39:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 16:22:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 18:35:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 20:48:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-17 23:10:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-18 01:30:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-18 03:49:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-18 06:02:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/dqn2018-08-18 08:14:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-18 17:54:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-18 21:24:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-19 01:25:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-19 05:27:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-19 09:49:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-19 14:11:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-19 18:45:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-19 23:21:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-20 03:52:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-20 08:15:47.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-20 12:39:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-20 17:05:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-20 21:41:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-21 02:14:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-21 06:48:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-21 11:13:40.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-21 15:39:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-21 20:14:07.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-22 00:45:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-22 05:13:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-22 09:37:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-22 14:04:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-22 18:50:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-22 23:29:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-23 04:06:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-23 08:31:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-23 13:02:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-23 17:38:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-23 22:13:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-24 02:48:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-24 07:14:53.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/awt/duelingdoubledqnPriori2018-08-24 11:44:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/ERMATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/ERMAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/ERMREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/FingerprintATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/FingerprintAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/FingerprintREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/FixedTimeATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/FixedTimeAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/FixedTimeREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/NonERMATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/NonERMAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/high/NonERMREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/ERMATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/ERMAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/ERMREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FingerprintATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FingerprintAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FingerprintREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FixedTimeATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FixedTimeAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/FixedTimeREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/NonEMRATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/NonEMRAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/NonEMRREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/NormalERMATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/NormalERMAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/evaluation/low/NormalERMREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnPrioriREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/doubledqnREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/dqnATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/dqnAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/dqnREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/files/duelingdoubledqnPrioriREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/doubledqnATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/doubledqnAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/doubledqnREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/duelingdoubledqnPrioriATT_Adam_goodOneATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/duelingdoubledqnPrioriATT_Adam_goodOneAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/duelingdoubledqnPrioriATT_Adam_goodOneREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/duelingdqnPrioriATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/duelingdqnPrioriAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/optimizer/duelingdqnPrioriREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-06 05:14:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-06 09:39:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-06 14:03:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-06 21:03:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-07 02:18:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-07 07:25:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-07 12:24:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-07 17:35:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-07 23:02:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-08 04:36:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-08 09:24:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-08 14:16:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqn2018-08-08 19:31:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 02:19:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 05:07:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 07:55:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 10:44:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 13:34:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 16:29:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 19:20:36.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-09 22:14:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 01:06:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 03:57:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 06:34:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 09:12:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 12:01:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 14:52:44.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 18:02:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-10 21:03:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 00:04:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 03:07:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 06:03:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 08:56:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 11:50:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 14:45:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 17:52:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-11 20:47:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 01:08:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 04:52:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 07:56:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 10:51:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 13:45:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 16:43:42.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 19:40:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-12 22:36:17.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 01:32:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 04:28:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 07:25:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 10:20:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 13:17:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 16:14:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 19:09:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-13 22:51:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-14 01:55:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-14 04:58:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-14 07:52:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-14 10:48:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/doubledqnPriori2018-08-14 13:44:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 01:03:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 02:09:33.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 03:18:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 04:22:29.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 05:30:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 06:31:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 07:30:40.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 08:30:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 09:29:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 10:26:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 11:27:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 12:26:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 13:25:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 14:24:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 15:30:30.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-05 16:38:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 00:12:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 01:01:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 02:43:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 03:44:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 04:45:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 05:45:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 06:36:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 07:26:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 08:14:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 09:02:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 09:50:56.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 10:39:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 11:27:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 12:16:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 13:04:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 13:53:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 14:45:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 17:21:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 18:23:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 19:27:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 20:28:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 21:25:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 22:21:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-06 23:14:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 00:08:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 01:03:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 01:58:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 02:51:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 03:42:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 04:41:14.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 05:29:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 06:19:05.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 07:07:42.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 07:56:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 08:46:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 09:35:16.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 10:25:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 11:14:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 12:03:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-07 12:53:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 02:40:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 02:50:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 03:00:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 03:10:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 03:19:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 03:30:12.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 03:40:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 03:49:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 03:59:48.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 04:10:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 04:20:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 04:29:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 04:38:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 04:47:52.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 04:56:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 05:05:46.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 05:14:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 05:23:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 05:32:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 05:41:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 05:50:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 05:59:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 06:08:19.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 06:17:22.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 06:26:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 06:35:19.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 06:44:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 06:53:15.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 07:02:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 07:11:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 07:20:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 07:29:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 07:38:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 07:47:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 07:56:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 08:05:02.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 08:13:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 08:22:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 08:31:59.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-10 08:41:01.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-14 16:05:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-14 18:22:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-14 20:36:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-14 22:53:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 01:09:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 03:31:47.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 05:44:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 07:56:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 10:09:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 12:19:57.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 14:33:40.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 16:53:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 19:16:44.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 21:31:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-15 23:46:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 02:02:13.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 04:21:45.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 06:31:17.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 08:41:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 10:51:38.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 13:01:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 15:16:51.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 17:38:03.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 19:54:23.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-16 22:12:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 00:23:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 02:42:36.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 04:54:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 07:05:06.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 09:16:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 11:27:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 13:39:39.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 16:22:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 18:35:37.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 20:48:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-17 23:10:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-18 01:30:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-18 03:49:26.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-18 06:02:58.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/dqn2018-08-18 08:14:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-18 17:54:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-18 21:24:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-19 01:25:27.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-19 05:27:43.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-19 09:49:34.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-19 14:11:49.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-19 18:45:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-19 23:21:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-20 03:52:10.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-20 08:15:46.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-20 12:39:25.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-20 17:05:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-20 21:41:31.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-21 02:14:54.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-21 06:48:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-21 11:13:40.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-21 15:39:55.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-21 20:14:07.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-22 00:45:08.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-22 05:13:32.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-22 09:37:41.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-22 14:04:04.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-22 18:50:18.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-22 23:29:47.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-23 04:06:21.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-23 08:31:50.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-23 13:02:09.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-23 17:38:24.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-23 22:13:11.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-24 02:48:00.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-24 07:14:53.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rew/duelingdoubledqnPriori2018-08-24 11:44:35.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rewards/duelingdoubledqnPrioriATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rewards/duelingdoubledqnPrioriATT_Adam_goodOneATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rewards/duelingdoubledqnPrioriATT_Adam_goodOneAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rewards/duelingdoubledqnPrioriATT_Adam_goodOneREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rewards/duelingdoubledqnPrioriAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/rewards/duelingdoubledqnPrioriREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/doubledqnATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/doubledqnAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/doubledqnPrioriATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/doubledqnPrioriAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/doubledqnPrioriREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/doubledqnREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/dqnATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/dqnAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/dqnREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/duelingdoubledqnPrioriATT_Adam_goodOneATT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/duelingdoubledqnPrioriATT_Adam_goodOneAWT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/techniques/duelingdoubledqnPrioriATT_Adam_goodOneREW.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/traci_tls/pruebas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/traci_tls/runner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/traci_tls/tripinfo.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +798,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="custom_traffic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -115,9 +903,9 @@
         <option value="$PROJECT_DIR$/traci_tls/pruebas.py" />
         <option value="$PROJECT_DIR$/baselines/deepq/DQNAgent.py" />
         <option value="$PROJECT_DIR$/traci_tls/trafficEnvironment.py" />
-        <option value="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" />
         <option value="$PROJECT_DIR$/graphs.py" />
         <option value="$PROJECT_DIR$/graphs_evaluation.py" />
+        <option value="$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py" />
       </list>
     </option>
   </component>
@@ -350,12 +1138,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20295984" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20295984" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003524" side_tool="true" weight="0.3478803" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917705" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.35286784" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" weight="0.35286784" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -474,27 +1263,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/traci_tls/data/cross.sumocfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/traci_tls/data/crossdoubledqn.sumocfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/thesis/lib/python3.6/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="281" selection-start-line="281" selection-end-line="281" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/envs/thesis/lib/python3.6/site-packages/tensorflow/python/framework/ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -571,16 +1339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="994" column="8" selection-start-line="994" selection-start-column="8" selection-end-line="994" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/traci_tls/runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
-          <folding>
-            <element signature="e#554#592#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,23 +1520,6 @@
     <entry file="file://$PROJECT_DIR$/traci_tls/data/crossdqn.rou.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic_simple.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/traci_tls/pruebas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/traci_tls/data/crossduelingdoubledqnPriori.rou.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -789,28 +1530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="299" column="4" selection-start-line="299" selection-start-column="4" selection-end-line="299" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/deepq/DQNAgent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#781#1727#0" />
-            <element signature="e#1794#3169#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,6 +1559,82 @@
           <caret line="186" column="66" selection-start-line="186" selection-start-column="40" selection-end-line="186" selection-end-column="66" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/force/trafficDQNAgent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1313">
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/traci_tls/pruebas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/traci_tls/runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+          <folding>
+            <element signature="e#554#592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/results_plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/deepq/simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/deepq/DQNAgent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#781#1727#0" />
+            <element signature="e#1794#3169#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic_simple.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/deepq/experiments/custom_traffic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -47,13 +47,13 @@ def plot_rewards(path="/Users/jeancarlo/PycharmProjects/thesis/"):
 def reset():
     env.reset()
     for a in agents:
-        a.obs = env.choose_next_observation(a.x, a.y)  # result_obs[indexObs]
+        a.obs = env.choose_next_observation(a.x, a.y)
 
-        #index = 0
-        #for na in agents:
-        #    if na.id != a.id:
-        #        a.add_fingerprint(na.weights, index, na.td_errors)
-        #        index += 1
+        index = 0
+        for na in agents:
+            if na.id != a.id:
+                a.add_fingerprint(na.weights, index, na.td_errors)
+                index += 1
 
 
 if __name__ == '__main__':
@@ -109,16 +109,15 @@ if __name__ == '__main__':
                 if agent.yellow_steps == 0:
                     new_obs = env.choose_next_observation(agent.x, agent.y)
 
-                    #idx = 0
-                    #for n in agents:
-                    #    if n.id != agent.id:
-                    #        new_obs = agent.add_fingerprint_to_obs(new_obs, n.weights, idx, n.td_errors)
-                    #        idx += 1
+                    idx = 0
+                    for n in agents:
+                        if n.id != agent.id:
+                            new_obs = agent.add_fingerprint_to_obs(new_obs, n.weights, idx, n.td_errors)
+                            idx += 1
 
-                    #agent.store(reward, new_obs, done)
+                    agent.store(reward, new_obs, done)
                     agent.obs = new_obs
-                    #agent.learn(t)
-                    agent.update_target_network(t)
+                    agent.learn(t)
 
             gc.collect()
 
