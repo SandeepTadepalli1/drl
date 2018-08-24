@@ -277,8 +277,8 @@ plt.clf()
 Evaluation - Heterogeneous High
 """
 
-fp = read("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FingerprintREW")
-nerm = read("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/NonERMREW")
+fp = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FingerprintREW", 500)
+nerm = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/NonERMREW", 450)
 erm = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/ERMREW", 250)
 ft = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FixedTimeREW", 200)
 fig, ax = plt.subplots()
@@ -298,8 +298,8 @@ plt.savefig('High-Load-REW.png', format='png')
 
 plt.clf()
 
-fp = read("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FingerprintATT")
-nerm = read("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/NonERMATT")
+fp = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FingerprintATT", 350)
+nerm = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/NonERMATT", 450)
 erm = read5("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/ERMATT", 0)
 ft = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FixedTimeATT", 600)
 fig, ax = plt.subplots()
@@ -319,8 +319,8 @@ plt.savefig('High-Load-ATT.png', format='png')
 
 plt.clf()
 
-fp = read("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FingerprintAWT")
-nerm = read2("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/NonERMAWT", 125000)
+fp = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FingerprintAWT", 800)
+nerm = read4("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/NonERMAWT", 200, 125000, 125000)
 erm = read4("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/ERMAWT", 200, 120000, 40000)
 ft = read3("/Users/jeancarlo/PycharmProjects/thesis/images/evaluation/high/FixedTimeAWT", 400)
 fig, ax = plt.subplots()
